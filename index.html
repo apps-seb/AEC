@@ -1,1 +1,472 @@
-AEC
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEC - Aso Enlace Comunitario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-inter bg-slate-50 text-slate-800 overflow-x-hidden antialiased">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600 tracking-tighter flex items-center gap-2">
+                <i class="fa-solid fa-hands-holding-circle text-yellow-400"></i> AEC
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#quienes-somos" class="hover:text-blue-500 transition-colors">Quiénes Somos</a>
+                <a href="#propuesta" class="hover:text-blue-500 transition-colors">Propuesta de Valor</a>
+                <a href="#proyectos" class="hover:text-blue-500 transition-colors">Proyectos</a>
+                <a href="#conformamos" class="hover:text-blue-500 transition-colors">Comunidad</a>
+            </nav>
+            <button class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[85vh] flex items-center justify-center relative px-6 py-12">
+            <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-block bg-white/50 backdrop-blur-md rounded-full px-4 py-2 text-sm font-semibold text-blue-700 border border-white/50 mb-4 animate-float">
+                        <i class="fa-solid fa-seedling text-green-500 mr-2"></i> Asociación sin ánimo de lucro
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight">
+                        AEC <span class="block text-gradient-blue">Aso Enlace</span> <span class="text-gradient-yellow">Comunitario</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Promoviendo el beneficio social y el bienestar común a través del trabajo comunitario. Formulamos proyectos con objeto social, ambiental y restaurativo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <button class="btn-premium btn-blue text-lg">
+                            Conoce Más <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button class="btn-premium btn-gradient-yellow text-lg">
+                            Nuestros Proyectos <i class="fa-solid fa-folder-open"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center items-center">
+                    <!-- Glassmorphism Card (similar to Image 1) -->
+                    <div class="glass-card p-8 max-w-sm w-full relative z-10 animate-float" style="animation-delay: 1s;">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-400 to-yellow-300 p-1 mb-4 shadow-lg">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-4xl text-blue-500">
+                                    <i class="fa-solid fa-people-arrows"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Uniendo Lazos</h3>
+                            <p class="text-sm text-slate-600 mb-6 font-medium">"Trabajando juntos por un futuro restaurativo y sostenible"</p>
+
+                            <div class="grid grid-cols-3 gap-3 w-full mb-6">
+                                <div class="glass-card-inner p-3 flex flex-col items-center">
+                                    <span class="font-bold text-lg text-blue-600">3+</span>
+                                    <span class="text-xs text-slate-500">Áreas</span>
+                                </div>
+                                <div class="glass-card-inner p-3 flex flex-col items-center">
+                                    <span class="font-bold text-lg text-blue-600">100%</span>
+                                    <span class="text-xs text-slate-500">Compromiso</span>
+                                </div>
+                                <div class="glass-card-inner p-3 flex flex-col items-center">
+                                    <span class="font-bold text-lg text-blue-600"><i class="fa-solid fa-leaf"></i></span>
+                                    <span class="text-xs text-slate-500">Ambiental</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-premium btn-blue w-full">
+                                <i class="fa-solid fa-handshake"></i> Únete a nosotros
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Decorative background shapes -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-300 rounded-full blur-3xl opacity-20 z-0"></div>
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full blur-2xl opacity-30 z-0"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiénes Somos Section -->
+        <section id="quienes-somos" class="py-20 px-6 relative z-10">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Quiénes <span class="text-gradient-blue">Somos</span></h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">AEC es una asociación enfocada en el desarrollo integral de las comunidades, impulsando iniciativas que transforman realidades.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-2xl text-blue-500 mb-6 mx-auto shadow-inner">
+                            <i class="fa-solid fa-bullseye fa-beat-fade"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Misión</h3>
+                        <p class="text-slate-600 text-center text-sm leading-relaxed">Promover el beneficio social y el bienestar común a través del trabajo comunitario, mediante la formulación de proyectos con objeto social, ambiental y restaurativo.</p>
+                    </div>
+
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-2xl text-yellow-500 mb-6 mx-auto shadow-inner">
+                            <i class="fa-solid fa-eye fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Visión</h3>
+                        <p class="text-slate-600 text-center text-sm leading-relaxed">Ser el enlace fundamental para la reconstrucción del tejido social, consolidando comunidades sostenibles, empoderadas y resilientes.</p>
+                    </div>
+
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-2xl text-green-500 mb-6 mx-auto shadow-inner">
+                            <i class="fa-solid fa-heart fa-beat-fade" style="--fa-animation-duration: 1.5s;"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Valores</h3>
+                        <p class="text-slate-600 text-center text-sm leading-relaxed">Solidaridad, equidad, respeto por el medio ambiente, inclusión y trabajo en equipo para el desarrollo comunitario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Propuesta de Valor Section -->
+        <section id="propuesta" class="py-20 px-6 relative">
+            <!-- Background element -->
+            <div class="absolute inset-0 bg-white/40 backdrop-blur-sm -skew-y-3 z-0"></div>
+
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Nuestra <span class="text-gradient-yellow">Propuesta de Valor</span></h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Brindamos soluciones integrales que impactan positivamente en el entorno social y ambiental.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto glass-card p-8 md:p-12">
+                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                        <!-- Pill items inspired by Image 2 -->
+                        <div class="gradient-pill bg-grad-blue-light">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-network-wired bg-white/20 p-2 rounded-full"></i>
+                                <span>Conectar con la comunidad</span>
+                            </div>
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div class="gradient-pill bg-grad-green-blue">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-award bg-white/20 p-2 rounded-full"></i>
+                                <span>Calidad y Eficiencia</span>
+                            </div>
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div class="gradient-pill bg-grad-purple">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-leaf bg-white/20 p-2 rounded-full"></i>
+                                <span>Sostenibilidad</span>
+                            </div>
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div class="gradient-pill bg-grad-orange-pink">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-arrows-spin bg-white/20 p-2 rounded-full"></i>
+                                <span>Flexibilidad y Adaptabilidad</span>
+                            </div>
+                            <i class="fa-solid fa-check-circle"></i>
+                        </div>
+
+                        <div class="gradient-pill bg-gradient-to-r from-blue-500 to-yellow-500 md:col-span-2 mt-4 mx-auto w-full max-w-md">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-hand-holding-heart bg-white/20 p-2 rounded-full"></i>
+                                <span class="font-bold text-lg">Servicios al Asociado</span>
+                            </div>
+                            <i class="fa-solid fa-plus-circle text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué nos diferencia Section -->
+        <section class="py-20 px-6 relative z-10">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <div class="glass-card p-8 relative overflow-hidden">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-30"></div>
+                            <h2 class="text-3xl font-bold text-slate-800 mb-6">¿Qué nos <span class="text-gradient-blue">Diferencia</span>?</h2>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                En AEC, nuestro enfoque no es asistencialista, sino transformador. Nos distinguimos por nuestra capacidad de crear ecosistemas de desarrollo donde cada actor de la comunidad tiene un rol protagónico.
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mt-1 flex-shrink-0">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-slate-700">Enfoque restaurativo y reconciliador.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mt-1 flex-shrink-0">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-slate-700">Articulación de actores diversos en un mismo territorio.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-500 mt-1 flex-shrink-0">
+                                        <i class="fa-solid fa-check text-xs"></i>
+                                    </div>
+                                    <span class="text-slate-700">Sostenibilidad a largo plazo de los proyectos.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6 text-center animate-float" style="animation-delay: 0s;">
+                            <i class="fa-solid fa-users text-4xl text-blue-500 mb-3"></i>
+                            <h4 class="font-bold text-slate-800">Inclusión</h4>
+                        </div>
+                        <div class="glass-card p-6 text-center animate-float mt-8" style="animation-delay: 0.5s;">
+                            <i class="fa-solid fa-hand-holding-dollar text-4xl text-yellow-500 mb-3"></i>
+                            <h4 class="font-bold text-slate-800">Economía</h4>
+                        </div>
+                        <div class="glass-card p-6 text-center animate-float -mt-8" style="animation-delay: 1s;">
+                            <i class="fa-solid fa-seedling text-4xl text-green-500 mb-3"></i>
+                            <h4 class="font-bold text-slate-800">Ambiente</h4>
+                        </div>
+                        <div class="glass-card p-6 text-center animate-float" style="animation-delay: 1.5s;">
+                            <i class="fa-solid fa-scale-balanced text-4xl text-purple-500 mb-3"></i>
+                            <h4 class="font-bold text-slate-800">Justicia</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos Section -->
+        <section id="proyectos" class="py-20 px-6 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-50/50 z-0"></div>
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Nuestros <span class="text-gradient-blue">Proyectos</span></h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Impulsamos iniciativas en tres ejes fundamentales para asegurar un desarrollo integral y equitativo.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Proyecto Social -->
+                    <div class="glass-card overflow-hidden group">
+                        <div class="h-48 bg-blue-100 flex items-center justify-center relative overflow-hidden">
+                            <i class="fa-solid fa-hands-holding-child text-6xl text-blue-400 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Sociales</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Iniciativas enfocadas en la reconstrucción del tejido social, educación, cultura y bienestar comunitario para poblaciones vulnerables.</p>
+                            <button class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 text-sm transition-colors">
+                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto Económico -->
+                    <div class="glass-card overflow-hidden group">
+                        <div class="h-48 bg-yellow-100 flex items-center justify-center relative overflow-hidden">
+                            <i class="fa-solid fa-chart-line text-6xl text-yellow-500 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/50 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Económicos</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Desarrollo de modelos económicos solidarios, cooperativismo y apoyo a emprendimientos que generan ingresos sostenibles.</p>
+                            <button class="text-yellow-600 font-semibold hover:text-yellow-700 flex items-center gap-2 text-sm transition-colors">
+                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto Productivo -->
+                    <div class="glass-card overflow-hidden group">
+                        <div class="h-48 bg-green-100 flex items-center justify-center relative overflow-hidden">
+                            <i class="fa-solid fa-tractor text-6xl text-green-500 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
+                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Productivos</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-slate-600 mb-4 text-sm">Fomento de la agricultura sostenible, seguridad alimentaria y transformación de materias primas con valor agregado local.</p>
+                            <button class="text-green-600 font-semibold hover:text-green-800 flex items-center gap-2 text-sm transition-colors">
+                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estrategias Section -->
+        <section class="py-20 px-6 relative z-10">
+            <div class="container mx-auto max-w-5xl">
+                <div class="glass-card p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-slate-800 mb-4">Estrategias: <span class="text-gradient-yellow">¿Cómo lo lograremos?</span></h2>
+                        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-yellow-400 mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0 shadow-sm">
+                                <span class="font-bold text-lg">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-2">Articulación Territorial</h4>
+                                <p class="text-slate-600 text-sm">Creación de redes de apoyo entre instituciones públicas, privadas y la comunidad.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 flex-shrink-0 shadow-sm">
+                                <span class="font-bold text-lg">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-2">Formación Integral</h4>
+                                <p class="text-slate-600 text-sm">Capacitación continua en habilidades técnicas, productivas y de resolución de conflictos.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 shadow-sm">
+                                <span class="font-bold text-lg">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-2">Innovación Social</h4>
+                                <p class="text-slate-600 text-sm">Implementación de metodologías participativas que respondan a las necesidades reales.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 flex-shrink-0 shadow-sm">
+                                <span class="font-bold text-lg">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-2">Acompañamiento Psicosocial</h4>
+                                <p class="text-slate-600 text-sm">Soporte continuo para garantizar el bienestar emocional de los participantes y el éxito de los procesos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiénes Conformamos Section -->
+        <section id="conformamos" class="py-20 px-6 relative z-10">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Quiénes <span class="text-gradient-blue">Conformamos</span> AEC</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Somos una asociación diversa y unida por el deseo de construir un mejor país desde los territorios.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mb-4 mx-auto shadow-sm">
+                            <i class="fa-solid fa-dove text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Firmantes del acuerdo de paz</h4>
+                    </div>
+
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mb-4 mx-auto shadow-sm">
+                            <i class="fa-solid fa-person-walking-luggage text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Desplazados por la violencia</h4>
+                    </div>
+
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-500 mb-4 mx-auto shadow-sm">
+                            <i class="fa-solid fa-gavel text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Comparecientes ante la JEP</h4>
+                    </div>
+
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mb-4 mx-auto shadow-sm">
+                            <i class="fa-solid fa-people-group text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm">Población de la comunidad</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8 px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-600 rounded-full blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="text-2xl font-bold text-white tracking-tighter flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-hands-holding-circle text-yellow-400"></i> AEC
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Aso Enlace Comunitario. Trabajando juntos por un futuro restaurativo, sostenible y en paz.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:text-white transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#quienes-somos" class="hover:text-yellow-400 transition-colors">Quiénes Somos</a></li>
+                        <li><a href="#propuesta" class="hover:text-yellow-400 transition-colors">Propuesta de Valor</a></li>
+                        <li><a href="#proyectos" class="hover:text-yellow-400 transition-colors">Nuestros Proyectos</a></li>
+                        <li><a href="#conformamos" class="hover:text-yellow-400 transition-colors">La Comunidad</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Proyectos</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Proyectos Sociales</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Proyectos Económicos</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Proyectos Productivos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-blue-400"></i>
+                            <span>Colombia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-blue-400"></i>
+                            <a href="mailto:info@aec-asociacion.org" class="hover:text-white transition-colors">info@aec-asociacion.org</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-blue-400"></i>
+                            <a href="tel:+570000000000" class="hover:text-white transition-colors">+57 000 000 0000</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">
+                    &copy; 2024 AEC Aso Enlace Comunitario. Todos los derechos reservados.
+                </p>
+                <div class="flex gap-4 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
