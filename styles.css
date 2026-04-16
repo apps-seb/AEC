@@ -32,10 +32,11 @@ body {
 }
 
 .glass-header {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Premium App-like Buttons (from Image 2) */
@@ -65,7 +66,7 @@ body {
 }
 
 .btn-gradient-yellow {
-    background: linear-gradient(135deg, #FDE047, #F59E0B);
+    background: linear-gradient(135deg, #FF8C00, #FFE600);
     color: white;
     box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
 }
@@ -78,7 +79,7 @@ body {
 }
 
 .text-gradient-yellow {
-    background: linear-gradient(135deg, #d97706, #facc15);
+    background: linear-gradient(135deg, #FF8C00, #FFE600);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -92,6 +93,18 @@ body {
 
 .animate-float {
     animation: float 4s ease-in-out infinite;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Gradient Pill Items (from Image 2) */
