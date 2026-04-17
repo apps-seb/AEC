@@ -117,7 +117,17 @@ body {
     animation: float 4s ease-in-out infinite;
 }
 
-/* Bottom Navigation styles handled via JS for dynamic positioning */
+/* Bottom Navigation styles */
+.nav-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Create the cutout/muesca effect using a mask */
+    /* A circle cutout at the top center */
+    -webkit-mask-image: radial-gradient(circle at 50% 0%, transparent 32px, black 33px);
+    mask-image: radial-gradient(circle at 50% 0%, transparent 32px, black 33px);
+}
 
 /* Scroll Animations */
 .scroll-animate {
