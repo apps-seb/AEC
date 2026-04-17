@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bottom Navigation Logic
     const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
     const navIndicatorBg = document.getElementById('nav-indicator-bg');
-    const sections = ['hero', 'proyectos', 'propuesta'];
+    // Extract sections from hrefs to ensure they match
+    const sections = Array.from(bottomNavLinks).map(link => link.getAttribute('href').substring(1));
 
     function updateNavIndicator(activeIndex) {
         bottomNavLinks.forEach((link, idx) => {
@@ -95,10 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollPosition = window.scrollY + window.innerHeight / 2;
 
             let currentSectionIndex = 0;
+            let maxTop = -1;
             sections.forEach((sectionId, index) => {
                 const element = document.getElementById(sectionId);
-                if (element && element.offsetTop <= scrollPosition) {
-                    currentSectionIndex = index;
+                if (element) {
+                    // Let's accurately get offset from top of document
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top + window.scrollY;
+                    if (elementTop <= scrollPosition && elementTop > maxTop) {
+                        currentSectionIndex = index;
+                        maxTop = elementTop;
+                    }
                 }
             });
 
