@@ -568,37 +568,22 @@
 
     <!-- Professional Bottom Navigation -->
     <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden w-[90%] max-w-sm">
-        <div class="bg-white rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.1)] px-6 py-4 flex justify-between items-center relative overflow-visible border border-slate-100/50">
-            <!-- Background indicator track -->
-            <div class="absolute inset-0 pointer-events-none z-0">
-                <!-- Active Indicator Background -->
-                <div id="nav-indicator-bg" class="absolute top-0 w-14 h-14 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] shadow-[0_8px_16px_rgba(59,130,246,0.4)] z-0 flex items-center justify-center" style="transform: translateY(-24px);">
-                </div>
-            </div>
+        <!-- Floating Center Button placed outside the masked container -->
+        <a href="#proyectos" class="absolute left-1/2 -translate-x-1/2 -top-6 w-16 h-16 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center text-white shadow-[0_10px_20px_rgba(56,189,248,0.5)] z-20 hover:scale-105 transition-transform duration-300" aria-label="Proyectos">
+            <i class="fa-solid fa-folder-open text-2xl"></i>
+        </a>
 
-            <!-- Nav Items -->
-            <a href="#hero" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="0">
-                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
-                    <i class="fa-solid fa-house text-xl transition-colors duration-300 group-[.active]:text-white"></i>
-                </div>
+        <div class="relative w-full h-16 flex justify-between items-center px-8 nav-glass shadow-[0_10px_40px_rgba(0,0,0,0.1)]" style="border-radius: 2rem;">
+
+            <!-- Items -->
+            <!-- Left Item: Inicio -->
+            <a href="#hero" class="w-12 h-12 flex items-center justify-center text-sky-400 hover:text-sky-500 transition-colors duration-300 z-10" aria-label="Inicio">
+                <i class="fa-solid fa-house text-2xl"></i>
             </a>
 
-            <a href="#proyectos" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group active" data-index="1">
-                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
-                    <i class="fa-solid fa-folder-open text-xl transition-colors duration-300 group-[.active]:text-white"></i>
-                </div>
-            </a>
-
-            <a href="#propuesta" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="2">
-                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
-                    <i class="fa-solid fa-star text-xl transition-colors duration-300 group-[.active]:text-white"></i>
-                </div>
-            </a>
-
-            <a href="#quienes-somos" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="3">
-                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
-                    <i class="fa-solid fa-users text-xl transition-colors duration-300 group-[.active]:text-white"></i>
-                </div>
+            <!-- Right Item: Propuesta -->
+            <a href="#propuesta" class="w-12 h-12 flex items-center justify-center text-sky-400 hover:text-sky-500 transition-colors duration-300 z-10" aria-label="Propuesta de Valor">
+                <i class="fa-solid fa-star text-2xl"></i>
             </a>
         </div>
     </nav>
