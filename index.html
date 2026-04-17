@@ -26,12 +26,14 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white/90 backdrop-blur-md z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-8 text-xl font-bold">
-            <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl"><i class="fa-solid fa-xmark"></i></button>
-            <a href="#quienes-somos" class="mobile-link hover:text-blue-500 transition-colors">Quiénes Somos</a>
-            <a href="#propuesta" class="mobile-link hover:text-blue-500 transition-colors">Propuesta de Valor</a>
-            <a href="#proyectos" class="mobile-link hover:text-blue-500 transition-colors">Proyectos</a>
-            <a href="#conformamos" class="mobile-link hover:text-blue-500 transition-colors">Comunidad</a>
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900/40 backdrop-blur-2xl z-40 transform translate-y-[-100%] transition-transform duration-500 md:hidden flex flex-col justify-center items-center gap-8 text-2xl font-bold text-white shadow-2xl border-b border-white/20 h-screen w-screen opacity-0 overflow-y-auto">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-4xl text-white hover:text-red-400 transition-colors"><i class="fa-solid fa-xmark"></i></button>
+            <div class="flex flex-col items-center gap-8 w-full px-6 py-12">
+                <a href="#quienes-somos" class="mobile-link hover:text-blue-400 transition-colors bg-white/10 w-full text-center py-4 rounded-xl backdrop-blur-md border border-white/10 shadow-lg">Quiénes Somos</a>
+                <a href="#propuesta" class="mobile-link hover:text-yellow-400 transition-colors bg-white/10 w-full text-center py-4 rounded-xl backdrop-blur-md border border-white/10 shadow-lg">Propuesta de Valor</a>
+                <a href="#proyectos" class="mobile-link hover:text-green-400 transition-colors bg-white/10 w-full text-center py-4 rounded-xl backdrop-blur-md border border-white/10 shadow-lg">Proyectos</a>
+                <a href="#conformamos" class="mobile-link hover:text-purple-400 transition-colors bg-white/10 w-full text-center py-4 rounded-xl backdrop-blur-md border border-white/10 shadow-lg">Comunidad</a>
+            </div>
         </div>
     </header>
 
@@ -40,9 +42,6 @@
         <section id="hero" class="min-h-[85vh] flex items-center justify-center relative px-6 py-12">
             <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
                 <div class="space-y-6 text-center lg:text-left">
-                    <div class="inline-block bg-white/50 backdrop-blur-md rounded-full px-4 py-2 text-sm font-semibold text-blue-700 border border-white/50 mb-4 animate-float">
-                        <i class="fa-solid fa-seedling text-green-500 mr-2"></i> Asociación sin ánimo de lucro
-                    </div>
                     <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight">
                         AEC <span class="block text-gradient-blue">Aso Enlace</span> <span class="text-gradient-yellow">Comunitario</span>
                     </h1>
@@ -66,21 +65,30 @@
 
                         <!-- Carousel Slides -->
                         <div id="hero-carousel" class="flex transition-transform duration-500 ease-out h-full w-full">
-                            <!-- Slide 1 -->
+                            <!-- Slide 1 (Video) -->
+                            <div class="w-full h-full flex-shrink-0 relative">
+                                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                </video>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                    <h3 class="text-white text-xl font-bold">Nuestro Impacto</h3>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <img src="https://images.unsplash.com/photo-1593113513832-8456885c3db8?q=80&w=1000&auto=format&fit=crop" alt="Comunidad unida" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                                     <h3 class="text-white text-xl font-bold">Uniendo Lazos</h3>
                                 </div>
                             </div>
-                            <!-- Slide 2 -->
+                            <!-- Slide 3 -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" alt="Proyectos ambientales" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                                     <h3 class="text-white text-xl font-bold">Compromiso Ambiental</h3>
                                 </div>
                             </div>
-                            <!-- Slide 3 -->
+                            <!-- Slide 4 -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1000&auto=format&fit=crop" alt="Trabajo en equipo" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
@@ -100,6 +108,7 @@
                         <!-- Carousel Indicators -->
                         <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="carousel-indicators">
                             <button class="w-2 h-2 rounded-full bg-white transition-all"></button>
+                            <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
                             <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
                             <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
                         </div>
@@ -280,7 +289,7 @@
                         </div>
                         <div class="p-6">
                             <p class="text-slate-600 mb-4 text-sm">Iniciativas enfocadas en la reconstrucción del tejido social, educación, cultura y bienestar comunitario para poblaciones vulnerables.</p>
-                            <button class="interactive-btn text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 text-sm transition-colors" data-message="Mostrando iniciativas sociales...">
+                            <button class="interactive-btn text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 text-sm transition-colors" data-type="social">
                                 Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -295,7 +304,7 @@
                         </div>
                         <div class="p-6">
                             <p class="text-slate-600 mb-4 text-sm">Desarrollo de modelos económicos solidarios, cooperativismo y apoyo a emprendimientos que generan ingresos sostenibles.</p>
-                            <button class="interactive-btn text-yellow-600 font-semibold hover:text-yellow-700 flex items-center gap-2 text-sm transition-colors" data-message="Mostrando iniciativas económicas...">
+                            <button class="interactive-btn text-yellow-600 font-semibold hover:text-yellow-700 flex items-center gap-2 text-sm transition-colors" data-type="economico">
                                 Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -310,7 +319,7 @@
                         </div>
                         <div class="p-6">
                             <p class="text-slate-600 mb-4 text-sm">Fomento de la agricultura sostenible, seguridad alimentaria y transformación de materias primas con valor agregado local.</p>
-                            <button class="interactive-btn text-green-600 font-semibold hover:text-green-800 flex items-center gap-2 text-sm transition-colors" data-message="Mostrando iniciativas productivas...">
+                            <button class="interactive-btn text-green-600 font-semibold hover:text-green-800 flex items-center gap-2 text-sm transition-colors" data-type="productivo">
                                 Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -318,6 +327,36 @@
                 </div>
             </div>
         </section>
+
+        <!-- Projects Modal Container -->
+        <div id="projects-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] flex justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="projects-modal-content">
+                <!-- Modal Header -->
+                <div class="relative h-48 sm:h-64 overflow-hidden flex-shrink-0" id="modal-header-container">
+                    <img id="modal-header-img" src="" alt="Portada del proyecto" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6">
+                        <div class="flex items-center gap-4 text-white">
+                            <div id="modal-header-icon" class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-folder"></i>
+                            </div>
+                            <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold">Título del Proyecto</h3>
+                        </div>
+                    </div>
+                    <button id="close-modal-btn" class="absolute top-4 right-4 bg-black/50 hover:bg-red-500 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="p-6 overflow-y-auto bg-slate-50 flex-grow" id="modal-body">
+                    <p id="modal-description" class="text-slate-600 mb-8 text-lg">Descripción de la categoría.</p>
+
+                    <!-- Sub-projects Grid -->
+                    <div id="sub-projects-container" class="grid sm:grid-cols-2 gap-6">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Estrategias Section -->
         <section class="py-20 px-6 relative z-10">
