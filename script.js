@@ -203,39 +203,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close-modal-btn');
 
     // Modal Elements
-    const modalImg = document.getElementById('modal-header-img');
     const modalIcon = document.getElementById('modal-header-icon');
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-description');
     const subProjectsContainer = document.getElementById('sub-projects-container');
+    const modalHeaderBg = document.getElementById('modal-header-bg');
 
     function openModal(type) {
         const data = projectData[type];
         if(!data) return;
 
         // Populate Modal
-        modalImg.src = data.image;
         modalIcon.innerHTML = data.icon;
+        // Make the icon text white since we have a colored background now
+        const iconElement = modalIcon.querySelector('i');
+        if (iconElement) {
+            iconElement.className = iconElement.className.replace(/text-[a-z]+-\d+/, 'text-white');
+        }
+
         modalTitle.textContent = data.title;
         modalDesc.textContent = data.description;
+
+        // Change background gradient based on type
+        if (type === 'social') {
+            modalHeaderBg.className = 'absolute inset-0 bg-gradient-to-b from-blue-400/60 to-white z-0 opacity-50';
+            modalIcon.className = 'relative z-10 w-24 h-24 rounded-[1.5rem] bg-gradient-to-br from-blue-400 to-blue-500 shadow-xl flex items-center justify-center text-5xl text-white mb-4 border border-white/20';
+        } else if (type === 'economico') {
+            modalHeaderBg.className = 'absolute inset-0 bg-gradient-to-b from-yellow-400/60 to-white z-0 opacity-50';
+            modalIcon.className = 'relative z-10 w-24 h-24 rounded-[1.5rem] bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-xl flex items-center justify-center text-5xl text-white mb-4 border border-white/20';
+        } else if (type === 'productivo') {
+            modalHeaderBg.className = 'absolute inset-0 bg-gradient-to-b from-green-400/60 to-white z-0 opacity-50';
+            modalIcon.className = 'relative z-10 w-24 h-24 rounded-[1.5rem] bg-gradient-to-br from-green-400 to-green-500 shadow-xl flex items-center justify-center text-5xl text-white mb-4 border border-white/20';
+        }
 
         // Populate Sub-projects
         subProjectsContainer.innerHTML = '';
         data.projects.forEach((proj, index) => {
             const delay = index * 100;
             const card = document.createElement('div');
-            card.className = `bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 transform translate-y-4 opacity-0 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 group`;
+            card.className = `flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transform translate-y-4 opacity-0 transition-all duration-500`;
             card.style.transitionDelay = `${delay}ms`;
 
             card.innerHTML = `
-                <div class="h-40 overflow-hidden relative">
-                    <img src="${proj.img}" alt="${proj.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-xs font-bold px-3 py-1 rounded-full text-slate-800 shadow-sm">${proj.type}</span>
+                <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 relative">
+                    <img src="${proj.img}" alt="${proj.name}" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <h4 class="font-bold text-lg text-slate-800 mb-2">${proj.name}</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">${proj.desc}</p>
+                <div class="flex-grow">
+                    <h4 class="font-bold text-slate-800 text-sm">${proj.name}</h4>
+                    <p class="text-slate-500 text-xs">${proj.type}</p>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 flex-shrink-0">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
             `;
             subProjectsContainer.appendChild(card);
@@ -249,15 +267,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show Modal
         modal.classList.remove('opacity-0', 'pointer-events-none');
         setTimeout(() => {
-            modalContent.classList.remove('scale-95');
-            modalContent.classList.add('scale-100');
+            modalContent.classList.remove('translate-y-full');
+            modalContent.classList.add('translate-y-0');
         }, 50);
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-        modalContent.classList.remove('scale-100');
-        modalContent.classList.add('scale-95');
+        modalContent.classList.remove('translate-y-0');
+        modalContent.classList.add('translate-y-full');
         setTimeout(() => {
             modal.classList.add('opacity-0', 'pointer-events-none');
             document.body.style.overflow = '';
@@ -282,4 +300,209 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Value Propositions Interactive Pill Carousel
+    const pillsData = [
+        {
+            title: "Conexión",
+            icon: '<i class="fa-solid fa-network-wired"></i>',
+            bg: "from-blue-400 to-blue-500",
+            shadow: "shadow-blue-500/40",
+            blur: "bg-blue-300"
+        },
+        {
+            title: "Calidad",
+            icon: '<i class="fa-solid fa-award"></i>',
+            bg: "from-orange-400 to-red-400",
+            shadow: "shadow-orange-500/40",
+            blur: "bg-orange-300"
+        },
+        {
+            title: "Sostenibilidad",
+            icon: '<i class="fa-solid fa-leaf"></i>',
+            bg: "from-green-400 to-emerald-500",
+            shadow: "shadow-green-500/40",
+            blur: "bg-green-300"
+        },
+        {
+            title: "Flexibilidad",
+            icon: '<i class="fa-solid fa-arrows-spin"></i>',
+            bg: "from-purple-400 to-indigo-500",
+            shadow: "shadow-purple-500/40",
+            blur: "bg-purple-300"
+        },
+        {
+            title: "Inclusión",
+            icon: '<i class="fa-solid fa-users"></i>',
+            bg: "from-yellow-400 to-orange-400",
+            shadow: "shadow-yellow-500/40",
+            blur: "bg-yellow-300"
+        }
+    ];
+
+    const pillsTrack = document.getElementById('pills-track');
+    const carouselBgGradient = document.getElementById('carousel-bg-gradient');
+    const valueCarouselContainer = document.getElementById('value-carousel-container');
+
+    if (pillsTrack && pillsData.length > 0) {
+        let activeIndex = Math.floor(pillsData.length / 2);
+
+        // Render pills
+        function renderPills() {
+            pillsTrack.innerHTML = '';
+
+            pillsData.forEach((pill, index) => {
+                const diff = index - activeIndex;
+                const isCenter = diff === 0;
+
+                // Calculate position, scale and z-index based on distance from center
+                let translateX = diff * 80; // Distance between items
+                let scale = 1 - Math.abs(diff) * 0.2; // Scale down elements further away
+                let zIndex = 10 - Math.abs(diff); // Center on top
+                let opacity = 1 - Math.abs(diff) * 0.3; // Fade out elements further away
+
+                // Limit scale and opacity so they don't disappear completely or get too small
+                if (scale < 0.4) scale = 0.4;
+                if (opacity < 0.1) opacity = 0;
+
+                // If it's too far, hide it
+                if (Math.abs(diff) > 2) {
+                    opacity = 0;
+                    scale = 0;
+                }
+
+                const pillEl = document.createElement('div');
+                pillEl.className = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out cursor-pointer flex flex-col items-center gap-4';
+                pillEl.style.transform = `translate(calc(-50% + ${translateX}px), -50%) scale(${scale})`;
+                pillEl.style.zIndex = zIndex;
+                pillEl.style.opacity = opacity;
+
+                // Content of the pill
+                let innerHtml = '';
+
+                if (isCenter) {
+                    // Central Pill (Bigger, text below)
+                    innerHtml = `
+                        <div class="w-32 h-40 rounded-[2.5rem] bg-gradient-to-br ${pill.bg} shadow-2xl ${pill.shadow} flex items-center justify-center text-5xl text-white border border-white/20 transition-all duration-300">
+                            ${pill.icon}
+                        </div>
+                        <span class="font-bold text-slate-800 text-lg absolute -bottom-10 whitespace-nowrap opacity-100 transition-opacity duration-300">${pill.title}</span>
+                    `;
+
+                    // Update background blur
+                    if (carouselBgGradient) {
+                        carouselBgGradient.className = `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-lg h-[250px] rounded-[100px] blur-3xl opacity-40 transition-colors duration-700 pointer-events-none z-0 ${pill.blur}`;
+                    }
+                } else {
+                    // Side Pills (Smaller, circular, no text or hidden text)
+                    innerHtml = `
+                        <div class="w-20 h-20 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-3xl text-slate-400 hover:text-slate-600 transition-colors duration-300">
+                            ${pill.icon}
+                        </div>
+                        <span class="font-bold text-slate-800 text-lg absolute -bottom-10 whitespace-nowrap opacity-0 transition-opacity duration-300">${pill.title}</span>
+                    `;
+                }
+
+                pillEl.innerHTML = innerHtml;
+
+                // Click to focus
+                pillEl.addEventListener('click', () => {
+                    activeIndex = index;
+                    renderPills();
+                    resetAutoPlay();
+                });
+
+                pillsTrack.appendChild(pillEl);
+            });
+        }
+
+        // Initial render
+        renderPills();
+
+        // Touch / Swipe logic
+        let startX = 0;
+        let isDragging = false;
+
+        if(valueCarouselContainer) {
+            valueCarouselContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            }, {passive: true});
+
+            valueCarouselContainer.addEventListener('touchmove', (e) => {
+                if(!isDragging) return;
+                const currentX = e.touches[0].clientX;
+                const diffX = startX - currentX;
+
+                // Swipe threshold
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0 && activeIndex < pillsData.length - 1) {
+                        // Swipe left (next)
+                        activeIndex++;
+                        renderPills();
+                        resetAutoPlay();
+                        isDragging = false; // Require new touch for next swipe
+                    } else if (diffX < 0 && activeIndex > 0) {
+                        // Swipe right (prev)
+                        activeIndex--;
+                        renderPills();
+                        resetAutoPlay();
+                        isDragging = false;
+                    }
+                }
+            }, {passive: true});
+
+            valueCarouselContainer.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            // Mouse drag (for desktop testing)
+            valueCarouselContainer.addEventListener('mousedown', (e) => {
+                startX = e.clientX;
+                isDragging = true;
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if(!isDragging) return;
+                const currentX = e.clientX;
+                const diffX = startX - currentX;
+
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0 && activeIndex < pillsData.length - 1) {
+                        activeIndex++;
+                        renderPills();
+                        resetAutoPlay();
+                        isDragging = false;
+                    } else if (diffX < 0 && activeIndex > 0) {
+                        activeIndex--;
+                        renderPills();
+                        resetAutoPlay();
+                        isDragging = false;
+                    }
+                }
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        }
+
+        // Autoplay
+        let autoPlayInterval;
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                activeIndex = (activeIndex + 1) % pillsData.length;
+                renderPills();
+            }, 3000); // Change every 3 seconds
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Start autoplay initially
+        startAutoPlay();
+    }
 });
