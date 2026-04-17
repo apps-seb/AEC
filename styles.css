@@ -198,3 +198,20 @@ body {
 .bg-grad-orange-pink {
     background: linear-gradient(90deg, #f97316, #ec4899);
 }
+
+/* Additional fixes for 3D flip functionality in Safari/iOS */
+.flip-card-inner {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0); /* Force hardware acceleration */
+}
+.flip-card-back {
+    transform: rotateY(180deg) translateZ(0);
+}
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}

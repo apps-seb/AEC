@@ -29,11 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Flip Card Logic
-    const flipBtns = document.querySelectorAll('.flip-btn');
-    flipBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent any parent handlers
-            const cardInner = btn.closest('.flip-card-inner');
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            const cardInner = card.querySelector('.flip-card-inner');
             if (cardInner) {
                 cardInner.classList.toggle('flipped');
             }
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -53,9 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('show');
                 // Optional: Stop observing once animated if we only want it to happen once
                 // observer.unobserve(entry.target);
-            } else {
-                // Remove show class if you want elements to animate again when scrolling up
-                // entry.target.classList.remove('show');
             }
         });
     }, observerOptions);
@@ -65,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .glass-card,
         .gradient-pill,
         section h2,
-        section p.max-w-2xl,
+        section p,
         .flip-card,
         .tilt-card,
         .bg-white.rounded-2xl.shadow-sm,
@@ -74,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elementsToAnimate.forEach((el, index) => {
         el.classList.add('scroll-animate');
-
         // Add staggered delays for a cascading effect on adjacent elements
         // E.g., cards in a grid
         const parentGrid = el.closest('.grid');
