@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Set the indicator's transform. Since the indicator is w-14 (56px) wide,
                 // we offset by half its width (28px) to center it on the calculated offset.
-                // We keep the vertical transform the same (-translate-y-[calc(50%+22px)]).
-                navIndicatorBg.style.transform = `translateX(calc(${centerOffset}px - 28px)) translateY(calc(-50% - 22px))`;
+                // We keep the vertical transform the same.
+                navIndicatorBg.style.transform = `translateX(calc(${centerOffset}px - 28px)) translateY(-24px)`;
             } else {
                 link.classList.remove('active');
             }
@@ -466,6 +466,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initial render
         renderPills();
+
+    // 3D Tilt Effect
+    const tiltElements = document.querySelectorAll('[data-tilt]');
+
+    tiltElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top; // y position within the element
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Calculate rotation. Max rotation is 15 degrees
+            const rotateX = ((y - centerY) / centerY) * -15;
+            const rotateY = ((x - centerX) / centerX) * 15;
+
+            el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            el.style.transition = 'transform 0.5s ease-out';
+        });
+
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'transform 0.1s ease-out';
+        });
+    });
 
         // Touch / Swipe logic
         let startX = 0;

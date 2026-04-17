@@ -193,56 +193,108 @@
         </section>
 
         <!-- Qué nos diferencia Section -->
-        <section class="py-20 px-6 relative z-10">
+        <section class="py-20 px-6 relative z-10 perspective-1000">
             <div class="container mx-auto">
                 <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full md:w-1/2">
-                        <div class="glass-card p-8 relative overflow-hidden">
-                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-30"></div>
-                            <h2 class="text-3xl font-bold text-slate-800 mb-6">¿Qué nos <span class="text-gradient-blue">Diferencia</span>?</h2>
-                            <p class="text-slate-600 mb-6 leading-relaxed">
+                    <div class="w-full md:w-1/2 tilt-card" data-tilt>
+                        <div class="glass-card p-8 relative overflow-hidden transform-style-3d bg-white/60 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-white/80 border backdrop-blur-xl">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-30 transform translate-z-10"></div>
+                            <h2 class="text-3xl font-bold text-slate-800 mb-6 transform translate-z-20">¿Qué nos <span class="text-gradient-blue">Diferencia</span>?</h2>
+                            <p class="text-slate-600 mb-6 leading-relaxed transform translate-z-10">
                                 En AEC, nuestro enfoque no es asistencialista, sino transformador. Nos distinguimos por nuestra capacidad de crear ecosistemas de desarrollo donde cada actor de la comunidad tiene un rol protagónico.
                             </p>
-                            <ul class="space-y-4">
+                            <ul class="space-y-4 transform translate-z-20">
                                 <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mt-1 flex-shrink-0">
+                                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mt-1 flex-shrink-0 shadow-md">
                                         <i class="fa-solid fa-check text-xs"></i>
                                     </div>
-                                    <span class="text-slate-700">Enfoque restaurativo y reconciliador.</span>
+                                    <span class="text-slate-700 font-medium">Enfoque restaurativo y reconciliador.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mt-1 flex-shrink-0">
+                                    <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mt-1 flex-shrink-0 shadow-md">
                                         <i class="fa-solid fa-check text-xs"></i>
                                     </div>
-                                    <span class="text-slate-700">Articulación de actores diversos en un mismo territorio.</span>
+                                    <span class="text-slate-700 font-medium">Articulación de actores diversos en un mismo territorio.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-500 mt-1 flex-shrink-0">
+                                    <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-500 mt-1 flex-shrink-0 shadow-md">
                                         <i class="fa-solid fa-check text-xs"></i>
                                     </div>
-                                    <span class="text-slate-700">Sostenibilidad a largo plazo de los proyectos.</span>
+                                    <span class="text-slate-700 font-medium">Sostenibilidad a largo plazo de los proyectos.</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                        <div class="glass-card p-6 text-center animate-float" style="animation-delay: 0s;">
-                            <i class="fa-solid fa-users text-4xl text-blue-500 mb-3"></i>
-                            <h4 class="font-bold text-slate-800">Inclusión</h4>
+                        <div class="tilt-card" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 0s;">
+                                <i class="fa-solid fa-users text-4xl text-blue-500 mb-3 transform translate-z-20"></i>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10">Inclusión</h4>
+                            </div>
                         </div>
-                        <div class="glass-card p-6 text-center animate-float mt-8" style="animation-delay: 0.5s;">
-                            <i class="fa-solid fa-hand-holding-dollar text-4xl text-yellow-500 mb-3"></i>
-                            <h4 class="font-bold text-slate-800">Economía</h4>
+                        <div class="tilt-card mt-8" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 0.5s;">
+                                <i class="fa-solid fa-hand-holding-dollar text-4xl text-yellow-500 mb-3 transform translate-z-20"></i>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10">Economía</h4>
+                            </div>
                         </div>
-                        <div class="glass-card p-6 text-center animate-float -mt-8" style="animation-delay: 1s;">
-                            <i class="fa-solid fa-seedling text-4xl text-green-500 mb-3"></i>
-                            <h4 class="font-bold text-slate-800">Ambiente</h4>
+                        <div class="tilt-card -mt-8" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 1s;">
+                                <i class="fa-solid fa-seedling text-4xl text-green-500 mb-3 transform translate-z-20"></i>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10">Ambiente</h4>
+                            </div>
                         </div>
-                        <div class="glass-card p-6 text-center animate-float" style="animation-delay: 1.5s;">
-                            <i class="fa-solid fa-scale-balanced text-4xl text-purple-500 mb-3"></i>
-                            <h4 class="font-bold text-slate-800">Justicia</h4>
+                        <div class="tilt-card" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 1.5s;">
+                                <i class="fa-solid fa-scale-balanced text-4xl text-purple-500 mb-3 transform translate-z-20"></i>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10">Justicia</h4>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compromiso Section -->
+        <section id="compromiso" class="py-20 px-6 relative z-10 bg-slate-50">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Nuestro <span class="text-gradient-blue">Compromiso</span></h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Trabajamos codo a codo para construir un camino hacia la reparación verdadera y un futuro resiliente.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mb-12">
+                    <!-- Tarjeta 1 -->
+                    <div class="group relative rounded-3xl p-1 bg-gradient-to-br from-sky-400 to-blue-600 shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-white rounded-[22px] h-full p-8 flex flex-col relative z-10">
+                            <div class="h-48 rounded-xl bg-slate-100 mb-6 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop" alt="Trabajo comunitario" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">Nuestro compromiso como asociación</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                Nos comprometemos a acciones especificas de reparación, como restitución, compensación, o trabajo comunitario a través de la asociación sin ánimo de lucro (Aso-Enlace Comunitario).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="group relative rounded-3xl p-1 bg-gradient-to-br from-sky-400 to-blue-600 shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-white rounded-[22px] h-full p-8 flex flex-col relative z-10">
+                            <div class="h-48 rounded-xl bg-slate-100 mb-6 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1000&auto=format&fit=crop" alt="Comunidad escuchando" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">Escuchamos sus voces, honramos su verdad</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                Estamos decididos a trabajar codo a codo con las víctimas y sus familias para construir un camino hacia la reparación verdadera. Este proyecto de Vivienda Rural Productiva no es solo un hogar, sino un símbolo de justicia, reconciliación y esperanza. Sabemos que la sanación empieza con el perdón, y juntos, con fuerza y determinación, avanzamos hacia una comunidad más unida y resiliente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn-premium btn-blue text-lg hover:shadow-[0_10px_20px_rgba(56,189,248,0.4)] transition-shadow">
+                        Ver Más Detalles <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -520,33 +572,34 @@
             <!-- Background indicator track -->
             <div class="absolute inset-0 pointer-events-none z-0">
                 <!-- Active Indicator Background -->
-                <div id="nav-indicator-bg" class="absolute top-1/2 w-14 h-14 bg-sky-400 rounded-full transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] shadow-lg shadow-sky-400/40 -translate-y-[calc(50%+22px)] z-0"></div>
+                <div id="nav-indicator-bg" class="absolute top-0 w-14 h-14 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] shadow-[0_8px_16px_rgba(59,130,246,0.4)] z-0 flex items-center justify-center" style="transform: translateY(-24px);">
+                </div>
             </div>
 
             <!-- Nav Items -->
-            <a href="#hero" class="bottom-nav-link relative z-10 w-14 h-14 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="0">
-                <div class="absolute top-0 w-14 h-14 flex items-center justify-center transition-transform duration-300 group-[.active]:-translate-y-6">
+            <a href="#hero" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="0">
+                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
                     <i class="fa-solid fa-house text-xl transition-colors duration-300 group-[.active]:text-white"></i>
                 </div>
-                <span class="text-[10px] font-medium opacity-100 group-[.active]:opacity-0 transition-opacity duration-300 absolute bottom-1">Inicio</span>
             </a>
 
-            <a href="#proyectos" class="bottom-nav-link relative z-10 w-14 h-14 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group active" data-index="1">
-                <div class="absolute top-0 w-14 h-14 flex items-center justify-center transition-transform duration-300 group-[.active]:-translate-y-6">
+            <a href="#proyectos" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group active" data-index="1">
+                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
                     <i class="fa-solid fa-folder-open text-xl transition-colors duration-300 group-[.active]:text-white"></i>
                 </div>
-                <span class="text-[10px] font-medium opacity-100 group-[.active]:opacity-0 transition-opacity duration-300 absolute bottom-1">Proyectos</span>
             </a>
 
-            <a href="#propuesta" class="bottom-nav-link relative z-10 w-14 h-14 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="2">
-                <div class="absolute top-0 w-14 h-14 flex items-center justify-center transition-transform duration-300 group-[.active]:-translate-y-6">
+            <a href="#propuesta" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="2">
+                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
                     <i class="fa-solid fa-star text-xl transition-colors duration-300 group-[.active]:text-white"></i>
                 </div>
-                <span class="text-[10px] font-medium opacity-100 group-[.active]:opacity-0 transition-opacity duration-300 absolute bottom-1">Propuesta</span>
             </a>
 
-            <!-- Active line indicator at the bottom (optional style touch) -->
-            <div class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-slate-200 rounded-full opacity-50 z-10"></div>
+            <a href="#quienes-somos" class="bottom-nav-link relative z-10 w-14 h-12 flex flex-col items-center justify-center text-slate-400 transition-colors duration-300 group" data-index="3">
+                <div class="absolute top-0 w-14 h-12 flex items-center justify-center transition-transform duration-500 group-[.active]:-translate-y-6">
+                    <i class="fa-solid fa-users text-xl transition-colors duration-300 group-[.active]:text-white"></i>
+                </div>
+            </a>
         </div>
     </nav>
 
