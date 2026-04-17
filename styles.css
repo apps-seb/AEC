@@ -89,6 +89,23 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* 3D Classes */
+.perspective-1000 {
+    perspective: 1000px;
+}
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+.translate-z-10 {
+    transform: translateZ(10px);
+}
+.translate-z-20 {
+    transform: translateZ(20px);
+}
+.tilt-card {
+    transition: transform 0.1s ease-out;
+}
+
 /* Animations */
 @keyframes float {
     0% { transform: translateY(0px); }
