@@ -28,18 +28,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
+    // Flip Card Logic
+    const flipBtns = document.querySelectorAll('.flip-btn');
+    flipBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent any parent handlers
+            const cardInner = btn.closest('.flip-card-inner');
+            if (cardInner) {
+                cardInner.classList.toggle('flipped');
             }
         });
     });
 
-    const hiddenElements = document.querySelectorAll('.glass-card, .gradient-pill');
-    hiddenElements.forEach((el) => {
+    // Scroll Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Optional: Stop observing once animated if we only want it to happen once
+                // observer.unobserve(entry.target);
+            } else {
+                // Remove show class if you want elements to animate again when scrolling up
+                // entry.target.classList.remove('show');
+            }
+        });
+    }, observerOptions);
+
+    // Select a wider variety of elements to animate for a cohesive feel
+    const elementsToAnimate = document.querySelectorAll(`
+        .glass-card,
+        .gradient-pill,
+        section h2,
+        section p.max-w-2xl,
+        .flip-card,
+        .tilt-card,
+        .bg-white.rounded-2xl.shadow-sm,
+        footer .grid > div
+    `);
+
+    elementsToAnimate.forEach((el, index) => {
         el.classList.add('scroll-animate');
+
+        // Add staggered delays for a cascading effect on adjacent elements
+        // E.g., cards in a grid
+        const parentGrid = el.closest('.grid');
+        if (parentGrid) {
+            const children = Array.from(parentGrid.children);
+            const idx = children.indexOf(el);
+            if (idx > 0) {
+                el.style.transitionDelay = `${idx * 100}ms`;
+            }
+        }
+
         observer.observe(el);
     });
 

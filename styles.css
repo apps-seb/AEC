@@ -106,6 +106,28 @@ body {
     transition: transform 0.1s ease-out;
 }
 
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+}
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+.backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Custom Notch for Flip Cards */
+.notch-bottom-right {
+    /* Creates a circular transparent cutout at the bottom right corner */
+    -webkit-mask-image: radial-gradient(circle at calc(100% - 36px) calc(100% - 36px), transparent 36px, black 37px);
+    mask-image: radial-gradient(circle at calc(100% - 36px) calc(100% - 36px), transparent 36px, black 37px);
+}
+
 /* Animations */
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -132,14 +154,19 @@ body {
 /* Scroll Animations */
 .scroll-animate {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .scroll-animate.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
+
+/* Staggered delays for child elements if needed */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
 
 /* Gradient Pill Items (from Image 2) */
 .gradient-pill {
