@@ -43,29 +43,69 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Mobile Menu
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+    // Bottom Navigation Logic
+    const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
+    const navIndicatorBg = document.getElementById('nav-indicator-bg');
+    const sections = ['hero', 'proyectos', 'propuesta'];
 
-    function openMobileMenu() {
-        mobileMenu.classList.remove('translate-y-[-100%]', 'opacity-0');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
+    function updateNavIndicator(activeIndex) {
+        bottomNavLinks.forEach((link, idx) => {
+            if (idx === activeIndex) {
+                link.classList.add('active');
+                // Calculate position based on the link's center
+                const linkRect = link.getBoundingClientRect();
+                const containerRect = link.parentElement.getBoundingClientRect();
+                const centerOffset = linkRect.left - containerRect.left + (linkRect.width / 2);
 
-    function closeMobileMenu() {
-        mobileMenu.classList.add('translate-y-[-100%]', 'opacity-0');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        closeMenuBtn.addEventListener('click', closeMobileMenu);
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+                // Set the indicator's transform. Since the indicator is w-14 (56px) wide,
+                // we offset by half its width (28px) to center it on the calculated offset.
+                // We keep the vertical transform the same (-translate-y-[calc(50%+22px)]).
+                navIndicatorBg.style.transform = `translateX(calc(${centerOffset}px - 28px)) translateY(calc(-50% - 22px))`;
+            } else {
+                link.classList.remove('active');
+            }
         });
+    }
+
+    // Initialize indicator position
+    if (bottomNavLinks.length > 0 && navIndicatorBg) {
+        // Wait for layout to settle
+        setTimeout(() => {
+            updateNavIndicator(0); // Default to first item
+        }, 100);
+
+        // Update on resize
+        window.addEventListener('resize', () => {
+            const activeIndex = Array.from(bottomNavLinks).findIndex(link => link.classList.contains('active'));
+            if (activeIndex !== -1) {
+                updateNavIndicator(activeIndex);
+            }
+        });
+
+        // Click handlers
+        bottomNavLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                // Let the default anchor scrolling happen, but update UI immediately
+                updateNavIndicator(index);
+            });
+        });
+
+        // Scroll spy
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            let currentSectionIndex = 0;
+            sections.forEach((sectionId, index) => {
+                const element = document.getElementById(sectionId);
+                if (element && element.offsetTop <= scrollPosition) {
+                    currentSectionIndex = index;
+                }
+            });
+
+            // Prevent overriding the click animation if they just clicked
+            // We'll trust the scroll event mostly
+            updateNavIndicator(currentSectionIndex);
+        }, { passive: true });
     }
 
     // Carousel Logic
