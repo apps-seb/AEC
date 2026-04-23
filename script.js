@@ -103,10 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
             carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
             indicators.forEach((ind, i) => {
                 if (i === currentSlide) {
-                    ind.classList.remove('bg-white/50');
+                    ind.classList.remove('bg-white/40');
+                    ind.classList.remove('hover:bg-white/60');
                     ind.classList.add('bg-white');
                 } else {
-                    ind.classList.add('bg-white/50');
+                    ind.classList.add('bg-white/40');
+                    ind.classList.add('hover:bg-white/60');
                     ind.classList.remove('bg-white');
                 }
             });
