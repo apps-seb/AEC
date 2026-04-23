@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
             carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
             indicators.forEach((ind, i) => {
                 if (i === currentSlide) {
-                    ind.classList.remove('bg-white/40');
+                    ind.classList.remove('bg-white/40', 'w-3', 'md:w-4');
                     ind.classList.remove('hover:bg-white/60');
-                    ind.classList.add('bg-white');
+                    ind.classList.add('bg-white', 'w-10', 'md:w-16');
                 } else {
-                    ind.classList.add('bg-white/40');
+                    ind.classList.add('bg-white/40', 'w-3', 'md:w-4');
                     ind.classList.add('hover:bg-white/60');
-                    ind.classList.remove('bg-white');
+                    ind.classList.remove('bg-white', 'w-10', 'md:w-16');
                 }
             });
         }
