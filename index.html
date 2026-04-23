@@ -51,8 +51,8 @@
                 </div>
 
                 <!-- Dark Overlay for Readability -->
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
-                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+                <div class="absolute inset-0 bg-black/10"></div>
 
                 <!-- Carousel Controls -->
                 <button id="carousel-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-md hover:bg-white/30 text-white w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-xl border border-white/20 z-20">
@@ -96,9 +96,9 @@
                     </div>
 
                     <!-- Bottom Cards Grid (Proyectos & Propuesta de Valor) -->
-                    <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:mb-16">
+                    <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4 md:gap-6 lg:mb-16">
                         <!-- Proyectos Card -->
-                        <a href="#proyectos" class="group relative overflow-hidden rounded-3xl aspect-[16/9] sm:aspect-square md:aspect-[4/3] shadow-2xl hover:-translate-y-2 transition-all duration-300 block scroll-btn border border-white/10" data-target="#proyectos">
+                        <a href="#proyectos" class="group relative overflow-hidden rounded-3xl aspect-square md:aspect-[4/3] shadow-2xl hover:-translate-y-2 transition-all duration-300 block scroll-btn border border-white/10" data-target="#proyectos">
                             <!-- Background Image -->
                             <div class="absolute inset-0">
                                 <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -116,21 +116,20 @@
                         </a>
 
                         <!-- Propuesta de Valor Card -->
-                        <a href="#propuesta" class="group relative overflow-hidden rounded-3xl aspect-[16/9] sm:aspect-square md:aspect-[4/3] shadow-2xl hover:-translate-y-2 transition-all duration-300 block scroll-btn border border-white/10" data-target="#propuesta">
-                            <!-- Background Glass/Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl group-hover:bg-white/10 transition-colors duration-500"></div>
-                            <div class="absolute inset-0 bg-black/20"></div>
+                        <a href="#propuesta" class="group relative overflow-hidden rounded-3xl aspect-square md:aspect-[4/3] shadow-2xl hover:-translate-y-2 transition-all duration-300 block scroll-btn border border-white/10" data-target="#propuesta">
+                            <!-- Background Image -->
+                            <div class="absolute inset-0">
+                                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <!-- Overlay Glass -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
                             <!-- Content -->
-                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-between items-start">
-                                <div class="w-12 h-12 rounded-2xl bg-sky-400/80 backdrop-blur-md flex items-center justify-center text-white shadow-lg border border-white/20">
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                                <div class="w-12 h-12 rounded-2xl bg-sky-400/80 backdrop-blur-md flex items-center justify-center text-white mb-auto shadow-lg border border-white/20">
                                     <i class="fa-solid fa-leaf"></i>
                                 </div>
-                                <div class="mt-auto">
-                                    <h4 class="text-white font-bold text-2xl md:text-3xl leading-tight mb-2 group-hover:text-sky-300 transition-colors">Propuesta<br>de Valor</h4>
-                                    <div class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/70 group-hover:text-white group-hover:bg-white/10 transition-all">
-                                        <i class="fa-solid fa-arrow-right -rotate-45"></i>
-                                    </div>
-                                </div>
+                                <h4 class="text-white font-bold text-2xl md:text-3xl mb-2 group-hover:text-sky-300 transition-colors">Propuesta<br>de Valor</h4>
+                                <p class="text-gray-300 text-sm md:text-base font-medium flex items-center gap-2">Descubre más <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i></p>
                             </div>
                         </a>
                     </div>
