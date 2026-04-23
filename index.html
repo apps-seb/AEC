@@ -27,85 +27,124 @@
 
     <main class="pt-20">
         <!-- Hero Section -->
-        <section id="hero" class="min-h-[85vh] flex items-center justify-center relative px-6 py-12">
-            <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center z-10">
-                <div class="space-y-6 text-center lg:text-left">
-                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight">
-                        AEC <span class="block text-gradient-blue">Aso Enlace</span> <span class="text-gradient-yellow">Comunitario</span>
+        <section id="hero" class="min-h-[100dvh] flex flex-col relative px-4 py-8 bg-gradient-to-br from-[#d9d5ce] to-[#b8b3a7] overflow-hidden justify-between">
+            <!-- Header (Logo & Menu) -->
+            <div class="flex justify-between items-center w-full max-w-5xl mx-auto z-20 mb-8 sm:mb-12">
+                <div class="text-xl font-bold tracking-widest text-slate-800 uppercase">AEC</div>
+                <button class="w-10 h-10 rounded-full border border-slate-500/50 flex items-center justify-center text-slate-800 hover:bg-slate-800 hover:text-white transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="container mx-auto flex flex-col items-center z-10 w-full max-w-5xl flex-grow">
+                <!-- Text Content -->
+                <div class="text-center space-y-3 mb-10 sm:mb-16">
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-slate-800 tracking-wider">
+                        AEC<sup class="text-2xl sm:text-3xl md:text-4xl">&reg;</sup>
                     </h1>
-                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
-                        Promoviendo el beneficio social y el bienestar común a través del trabajo comunitario. Formulamos proyectos con objeto social, ambiental y restaurativo.
+                    <p class="text-slate-600 font-light tracking-wide text-sm sm:text-base max-w-xs sm:max-w-md mx-auto">
+                        Promoviendo el beneficio social en comunidad
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                        <button class="btn-premium btn-blue text-lg scroll-btn" data-target="#quienes-somos">
-                            Conoce Más <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                        <button class="btn-premium btn-gradient-yellow text-lg scroll-btn" data-target="#proyectos">
-                            Nuestros Proyectos <i class="fa-solid fa-folder-open"></i>
-                        </button>
-                    </div>
+
+                    <button class="mt-6 sm:mt-8 bg-[#111] text-white rounded-full px-8 py-3.5 font-medium text-sm hover:bg-black transition-colors inline-flex items-center gap-3 shadow-2xl scroll-btn" data-target="#propuesta">
+                        Conoce Más <i class="fa-solid fa-arrow-right -rotate-45 text-xs opacity-80"></i>
+                    </button>
                 </div>
 
-                <div class="relative flex justify-center items-center w-full max-w-md mx-auto lg:max-w-full">
-
+                <!-- Main Slider Container -->
+                <div class="w-full relative flex flex-col items-center flex-grow flex-shrink min-h-[300px]">
                     <!-- Carousel Container -->
-                    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl z-10 aspect-[4/3] group">
+                    <div class="relative w-full max-w-2xl h-full min-h-[40vh] sm:min-h-[50vh] overflow-hidden z-10 rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)]">
 
                         <!-- Carousel Slides -->
-                        <div id="hero-carousel" class="flex transition-transform duration-500 ease-out h-full w-full">
+                        <div id="hero-carousel" class="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] h-full w-full">
                             <!-- Slide 1 (Video) -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <video autoplay loop muted playsinline class="w-full h-full object-cover">
                                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                                 </video>
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                                    <h3 class="text-white text-xl font-bold">Nuestro Impacto</h3>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/20">
+                                    <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-widest text-center shadow-black drop-shadow-lg">AEC</h2>
+                                    <p class="text-white/90 text-xs sm:text-sm mt-3 font-medium tracking-widest uppercase text-center px-4 drop-shadow-md">Proyectos que transforman</p>
                                 </div>
                             </div>
                             <!-- Slide 2 -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <img src="https://images.unsplash.com/photo-1593113513832-8456885c3db8?q=80&w=1000&auto=format&fit=crop" alt="Comunidad unida" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                                    <h3 class="text-white text-xl font-bold">Uniendo Lazos</h3>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/30">
+                                    <h2 class="text-white text-3xl sm:text-4xl font-bold tracking-widest text-center">UNIENDO LAZOS</h2>
                                 </div>
                             </div>
                             <!-- Slide 3 -->
                             <div class="w-full h-full flex-shrink-0 relative">
                                 <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" alt="Proyectos ambientales" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                                    <h3 class="text-white text-xl font-bold">Compromiso Ambiental</h3>
-                                </div>
-                            </div>
-                            <!-- Slide 4 -->
-                            <div class="w-full h-full flex-shrink-0 relative">
-                                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1000&auto=format&fit=crop" alt="Trabajo en equipo" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                                    <h3 class="text-white text-xl font-bold">Trabajo en Equipo</h3>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/30">
+                                    <h2 class="text-white text-3xl sm:text-4xl font-bold tracking-widest text-center">COMPROMISO AMBIENTAL</h2>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Carousel Controls -->
-                        <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-md hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i class="fa-solid fa-chevron-left"></i>
+                        <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/20 backdrop-blur-md hover:bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-all z-20">
+                            <i class="fa-solid fa-chevron-left text-sm"></i>
                         </button>
-                        <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 backdrop-blur-md hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i class="fa-solid fa-chevron-right"></i>
+                        <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/20 backdrop-blur-md hover:bg-black/40 text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-all z-20">
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
                         </button>
 
                         <!-- Carousel Indicators -->
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="carousel-indicators">
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20" id="carousel-indicators">
                             <button class="w-2 h-2 rounded-full bg-white transition-all"></button>
-                            <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
-                            <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
-                            <button class="w-2 h-2 rounded-full bg-white/50 transition-all"></button>
+                            <button class="w-2 h-2 rounded-full bg-white/40 transition-all hover:bg-white/60"></button>
+                            <button class="w-2 h-2 rounded-full bg-white/40 transition-all hover:bg-white/60"></button>
                         </div>
                     </div>
 
-                    <!-- Decorative background shapes -->
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-300 rounded-full blur-3xl opacity-20 z-0"></div>
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-300 rounded-full blur-2xl opacity-30 z-0"></div>
+                    <!-- Bottom Floating Cards -->
+                    <div class="w-full max-w-2xl grid grid-cols-2 gap-4 -mt-12 sm:-mt-16 z-30 px-2 sm:px-0 mb-8">
+                        <!-- Proyectos Card -->
+                        <div class="rounded-[2rem] overflow-hidden relative shadow-2xl aspect-[4/3] sm:aspect-[3/2] group cursor-pointer scroll-btn" data-target="#proyectos">
+                            <!-- Background Image -->
+                            <img src="https://images.unsplash.com/photo-1593113513832-8456885c3db8?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-blue-600/30 mix-blend-multiply"></div>
+
+                            <!-- Floating decorative bubbles -->
+                            <div class="absolute top-3 left-3 w-8 h-8 rounded-full bg-[#9fb381]/90 backdrop-blur-md flex items-center justify-center text-xs shadow-lg">
+                                <i class="fa-solid fa-face-smile text-white"></i>
+                            </div>
+                            <div class="absolute bottom-1/2 right-3 w-4 h-4 rounded-full bg-blue-300/80 backdrop-blur-md"></div>
+                            <div class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-blue-500/90 backdrop-blur-md flex items-center justify-center text-white shadow-xl">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="absolute inset-0 p-5 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                                <h3 class="text-white font-medium text-lg sm:text-xl tracking-wide">AEC</h3>
+                                <p class="text-white/80 text-[10px] sm:text-xs uppercase tracking-widest font-light mt-1">Nuestros Proyectos</p>
+                            </div>
+                        </div>
+
+                        <!-- Propuesta de Valor Card -->
+                        <div class="rounded-[2rem] relative shadow-2xl aspect-[4/3] sm:aspect-[3/2] group cursor-pointer overflow-hidden scroll-btn bg-gradient-to-br from-[#3b3a36] to-[#242320]" data-target="#propuesta">
+                            <!-- Subtle glowing element -->
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-[#5d5b54]/30 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
+
+                            <!-- Content -->
+                            <div class="absolute inset-0 p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+                                <i class="fa-solid fa-seedling text-white/90 text-3xl sm:text-4xl mb-4 group-hover:scale-110 transition-transform duration-500"></i>
+                                <h3 class="text-white/90 font-light text-sm sm:text-base leading-tight tracking-wide">Propuesta de<br>Valor</h3>
+                                <div class="mt-4 w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white/40 transition-colors">
+                                    <i class="fa-solid fa-plus text-white/60 text-[10px]"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Bottom arrow indicator -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500/70 hover:text-slate-800 transition-colors cursor-pointer" onclick="document.getElementById('quienes-somos').scrollIntoView({behavior: 'smooth'})">
+                <i class="fa-solid fa-chevron-down text-xl sm:text-2xl font-light"></i>
             </div>
         </section>
 
