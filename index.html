@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-inter bg-slate-50 text-slate-800 overflow-x-hidden antialiased">
+<body class="font-inter bg-transparent text-slate-800 overflow-x-hidden antialiased selection:bg-sky-200 selection:text-sky-900">
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600 tracking-tighter flex items-center gap-2">
-                <i class="fa-solid fa-hands-holding-circle text-yellow-400"></i> AEC
-            </div>
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://asoenlacecomunitario.com/IMAGENES/logoAEC.png" alt="AEC Logo" class="h-12 w-auto drop-shadow-sm hover:scale-105 transition-transform duration-300">
+            </a>
             <nav class="hidden md:flex gap-6 text-sm font-medium">
                 <a href="#quienes-somos" class="hover:text-blue-500 transition-colors">Quiénes Somos</a>
                 <a href="#propuesta" class="hover:text-blue-500 transition-colors">Propuesta de Valor</a>
@@ -154,27 +154,27 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-2xl text-blue-500 mb-6 mx-auto shadow-inner">
-                            <i class="fa-solid fa-bullseye fa-beat-fade"></i>
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300 group cursor-pointer">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-sky-50 flex items-center justify-center text-3xl text-sky-500 mb-6 mx-auto shadow-[0_8px_16px_rgba(14,165,233,0.15)] group-hover:shadow-[0_12px_24px_rgba(14,165,233,0.25)] transition-all duration-300 transform group-hover:scale-110">
+                            <i class="fa-solid fa-bullseye group-hover:animate-pulse"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Misión</h3>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3 group-hover:text-sky-600 transition-colors">Misión</h3>
                         <p class="text-slate-600 text-center text-sm leading-relaxed">Promover el beneficio social y el bienestar común a través del trabajo comunitario, mediante la formulación de proyectos con objeto social, ambiental y restaurativo.</p>
                     </div>
 
-                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-2xl text-yellow-500 mb-6 mx-auto shadow-inner">
-                            <i class="fa-solid fa-eye fa-beat-fade" style="--fa-animation-duration: 2s;"></i>
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300 group cursor-pointer">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-sky-50 flex items-center justify-center text-3xl text-sky-500 mb-6 mx-auto shadow-[0_8px_16px_rgba(14,165,233,0.15)] group-hover:shadow-[0_12px_24px_rgba(14,165,233,0.25)] transition-all duration-300 transform group-hover:scale-110">
+                            <i class="fa-solid fa-eye group-hover:animate-pulse" style="--fa-animation-duration: 2s;"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Visión</h3>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3 group-hover:text-sky-600 transition-colors">Visión</h3>
                         <p class="text-slate-600 text-center text-sm leading-relaxed">Ser el enlace fundamental para la reconstrucción del tejido social, consolidando comunidades sostenibles, empoderadas y resilientes.</p>
                     </div>
 
-                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-2xl text-green-500 mb-6 mx-auto shadow-inner">
-                            <i class="fa-solid fa-heart fa-beat-fade" style="--fa-animation-duration: 1.5s;"></i>
+                    <div class="glass-card p-8 hover:-translate-y-2 transition-transform duration-300 group cursor-pointer">
+                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-sky-50 flex items-center justify-center text-3xl text-sky-500 mb-6 mx-auto shadow-[0_8px_16px_rgba(14,165,233,0.15)] group-hover:shadow-[0_12px_24px_rgba(14,165,233,0.25)] transition-all duration-300 transform group-hover:scale-110">
+                            <i class="fa-solid fa-heart group-hover:animate-pulse" style="--fa-animation-duration: 1.5s;"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3">Valores</h3>
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-3 group-hover:text-sky-600 transition-colors">Valores</h3>
                         <p class="text-slate-600 text-center text-sm leading-relaxed">Solidaridad, equidad, respeto por el medio ambiente, inclusión y trabajo en equipo para el desarrollo comunitario.</p>
                     </div>
                 </div>
@@ -240,50 +240,58 @@
                                 En AEC, nuestro enfoque no es asistencialista, sino transformador. Nos distinguimos por nuestra capacidad de crear ecosistemas de desarrollo donde cada actor de la comunidad tiene un rol protagónico.
                             </p>
                             <ul class="space-y-4 transform translate-z-20">
-                                <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mt-1 flex-shrink-0 shadow-md">
-                                        <i class="fa-solid fa-check text-xs"></i>
+                                <li class="flex items-start gap-3 group">
+                                    <div class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 mt-0.5 flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-check text-sm"></i>
                                     </div>
-                                    <span class="text-slate-700 font-medium">Enfoque restaurativo y reconciliador.</span>
+                                    <span class="text-slate-700 font-medium mt-1">Enfoque restaurativo y reconciliador.</span>
                                 </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mt-1 flex-shrink-0 shadow-md">
-                                        <i class="fa-solid fa-check text-xs"></i>
+                                <li class="flex items-start gap-3 group">
+                                    <div class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 mt-0.5 flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-check text-sm"></i>
                                     </div>
-                                    <span class="text-slate-700 font-medium">Articulación de actores diversos en un mismo territorio.</span>
+                                    <span class="text-slate-700 font-medium mt-1">Articulación de actores diversos en un mismo territorio.</span>
                                 </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-500 mt-1 flex-shrink-0 shadow-md">
-                                        <i class="fa-solid fa-check text-xs"></i>
+                                <li class="flex items-start gap-3 group">
+                                    <div class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 mt-0.5 flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-check text-sm"></i>
                                     </div>
-                                    <span class="text-slate-700 font-medium">Sostenibilidad a largo plazo de los proyectos.</span>
+                                    <span class="text-slate-700 font-medium mt-1">Sostenibilidad a largo plazo de los proyectos.</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-6">
                         <div class="tilt-card" data-tilt>
-                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 0s;">
-                                <i class="fa-solid fa-users text-4xl text-blue-500 mb-3 transform translate-z-20"></i>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Inclusión</h4>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d group hover:bg-white/80 transition-all cursor-pointer" style="animation-delay: 0s;">
+                                <div class="w-16 h-16 mx-auto rounded-full bg-sky-50 flex items-center justify-center mb-4 transform translate-z-20 group-hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-shadow">
+                                    <i class="fa-solid fa-users text-3xl text-sky-500 group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10 group-hover:text-sky-600 transition-colors">Inclusión</h4>
                             </div>
                         </div>
-                        <div class="tilt-card mt-8" data-tilt>
-                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 0.5s;">
-                                <i class="fa-solid fa-hand-holding-dollar text-4xl text-yellow-500 mb-3 transform translate-z-20"></i>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Economía</h4>
+                        <div class="tilt-card mt-12" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d group hover:bg-white/80 transition-all cursor-pointer" style="animation-delay: 0.5s;">
+                                <div class="w-16 h-16 mx-auto rounded-full bg-yellow-50 flex items-center justify-center mb-4 transform translate-z-20 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-shadow">
+                                    <i class="fa-solid fa-hand-holding-dollar text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10 group-hover:text-yellow-600 transition-colors">Economía</h4>
                             </div>
                         </div>
-                        <div class="tilt-card -mt-8" data-tilt>
-                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 1s;">
-                                <i class="fa-solid fa-seedling text-4xl text-green-500 mb-3 transform translate-z-20"></i>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Ambiente</h4>
+                        <div class="tilt-card -mt-12" data-tilt>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d group hover:bg-white/80 transition-all cursor-pointer" style="animation-delay: 1s;">
+                                <div class="w-16 h-16 mx-auto rounded-full bg-green-50 flex items-center justify-center mb-4 transform translate-z-20 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-shadow">
+                                    <i class="fa-solid fa-seedling text-3xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10 group-hover:text-green-600 transition-colors">Ambiente</h4>
                             </div>
                         </div>
                         <div class="tilt-card" data-tilt>
-                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d" style="animation-delay: 1.5s;">
-                                <i class="fa-solid fa-scale-balanced text-4xl text-purple-500 mb-3 transform translate-z-20"></i>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Justicia</h4>
+                            <div class="glass-card p-6 text-center animate-float bg-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.1)] border-white/80 border transform-style-3d group hover:bg-white/80 transition-all cursor-pointer" style="animation-delay: 1.5s;">
+                                <div class="w-16 h-16 mx-auto rounded-full bg-purple-50 flex items-center justify-center mb-4 transform translate-z-20 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-shadow">
+                                    <i class="fa-solid fa-scale-balanced text-3xl text-purple-500 group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-800 transform translate-z-10 group-hover:text-purple-600 transition-colors">Justicia</h4>
                             </div>
                         </div>
                     </div>
@@ -390,46 +398,58 @@
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Proyecto Social -->
-                    <div class="glass-card overflow-hidden group">
-                        <div class="h-48 bg-blue-100 flex items-center justify-center relative overflow-hidden">
-                            <i class="fa-solid fa-hands-holding-child text-6xl text-blue-400 group-hover:scale-110 transition-transform duration-500"></i>
-                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Sociales</h3>
+                    <div class="glass-card overflow-hidden group cursor-pointer hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)] transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-56 bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                            <i class="fa-solid fa-hands-holding-child text-7xl text-white/90 group-hover:scale-125 transition-transform duration-700 drop-shadow-md"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <h3 class="absolute bottom-5 left-6 text-white text-2xl font-bold drop-shadow-lg">Sociales</h3>
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <p class="text-slate-600 mb-4 text-sm">Iniciativas enfocadas en la reconstrucción del tejido social, educación, cultura y bienestar comunitario para poblaciones vulnerables.</p>
-                            <button class="interactive-btn text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-2 text-sm transition-colors" data-type="social">
-                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                        <div class="p-8">
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">Iniciativas enfocadas en la reconstrucción del tejido social, educación, cultura y bienestar comunitario para poblaciones vulnerables.</p>
+                            <button class="interactive-btn btn-premium bg-sky-50 text-sky-600 w-full hover:bg-sky-500 hover:text-white transition-colors border-none shadow-none" data-type="social">
+                                Explorar <i class="fa-solid fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Proyecto Económico -->
-                    <div class="glass-card overflow-hidden group">
-                        <div class="h-48 bg-yellow-100 flex items-center justify-center relative overflow-hidden">
-                            <i class="fa-solid fa-chart-line text-6xl text-yellow-500 group-hover:scale-110 transition-transform duration-500"></i>
-                            <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/50 to-transparent"></div>
-                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Económicos</h3>
+                    <div class="glass-card overflow-hidden group cursor-pointer hover:shadow-[0_20px_40px_rgba(234,179,8,0.15)] transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-56 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                            <i class="fa-solid fa-chart-line text-7xl text-white/90 group-hover:scale-125 transition-transform duration-700 drop-shadow-md"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <h3 class="absolute bottom-5 left-6 text-white text-2xl font-bold drop-shadow-lg">Económicos</h3>
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <p class="text-slate-600 mb-4 text-sm">Desarrollo de modelos económicos solidarios, cooperativismo y apoyo a emprendimientos que generan ingresos sostenibles.</p>
-                            <button class="interactive-btn text-yellow-600 font-semibold hover:text-yellow-700 flex items-center gap-2 text-sm transition-colors" data-type="economico">
-                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                        <div class="p-8">
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">Desarrollo de modelos económicos solidarios, cooperativismo y apoyo a emprendimientos que generan ingresos sostenibles.</p>
+                            <button class="interactive-btn btn-premium bg-yellow-50 text-yellow-600 w-full hover:bg-yellow-500 hover:text-white transition-colors border-none shadow-none" data-type="economico">
+                                Explorar <i class="fa-solid fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Proyecto Productivo -->
-                    <div class="glass-card overflow-hidden group">
-                        <div class="h-48 bg-green-100 flex items-center justify-center relative overflow-hidden">
-                            <i class="fa-solid fa-tractor text-6xl text-green-500 group-hover:scale-110 transition-transform duration-500"></i>
-                            <div class="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
-                            <h3 class="absolute bottom-4 left-6 text-white text-xl font-bold">Proyectos Productivos</h3>
+                    <div class="glass-card overflow-hidden group cursor-pointer hover:shadow-[0_20px_40px_rgba(34,197,94,0.15)] transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-56 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                            <i class="fa-solid fa-tractor text-7xl text-white/90 group-hover:scale-125 transition-transform duration-700 drop-shadow-md"></i>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <h3 class="absolute bottom-5 left-6 text-white text-2xl font-bold drop-shadow-lg">Productivos</h3>
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <p class="text-slate-600 mb-4 text-sm">Fomento de la agricultura sostenible, seguridad alimentaria y transformación de materias primas con valor agregado local.</p>
-                            <button class="interactive-btn text-green-600 font-semibold hover:text-green-800 flex items-center gap-2 text-sm transition-colors" data-type="productivo">
-                                Ver iniciativas <i class="fa-solid fa-arrow-right"></i>
+                        <div class="p-8">
+                            <p class="text-slate-600 mb-6 text-sm leading-relaxed">Fomento de la agricultura sostenible, seguridad alimentaria y transformación de materias primas con valor agregado local.</p>
+                            <button class="interactive-btn btn-premium bg-green-50 text-green-600 w-full hover:bg-green-500 hover:text-white transition-colors border-none shadow-none" data-type="productivo">
+                                Explorar <i class="fa-solid fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
@@ -536,32 +556,32 @@
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mb-4 mx-auto shadow-sm">
-                            <i class="fa-solid fa-dove text-2xl"></i>
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-all duration-300 group cursor-pointer hover:shadow-[0_15px_30px_rgba(14,165,233,0.15)]">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-100 to-sky-50 flex items-center justify-center text-sky-500 mb-4 mx-auto shadow-sm group-hover:shadow-md transition-shadow group-hover:scale-110 transform">
+                            <i class="fa-solid fa-dove text-2xl group-hover:animate-bounce"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Firmantes del acuerdo de paz</h4>
+                        <h4 class="font-bold text-slate-800 text-sm group-hover:text-sky-600 transition-colors">Firmantes del acuerdo de paz</h4>
                     </div>
 
-                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mb-4 mx-auto shadow-sm">
-                            <i class="fa-solid fa-person-walking-luggage text-2xl"></i>
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-all duration-300 group cursor-pointer hover:shadow-[0_15px_30px_rgba(234,179,8,0.15)]">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center text-yellow-500 mb-4 mx-auto shadow-sm group-hover:shadow-md transition-shadow group-hover:scale-110 transform">
+                            <i class="fa-solid fa-person-walking-luggage text-2xl group-hover:animate-bounce"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Desplazados por la violencia</h4>
+                        <h4 class="font-bold text-slate-800 text-sm group-hover:text-yellow-600 transition-colors">Desplazados por la violencia</h4>
                     </div>
 
-                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-500 mb-4 mx-auto shadow-sm">
-                            <i class="fa-solid fa-gavel text-2xl"></i>
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-all duration-300 group cursor-pointer hover:shadow-[0_15px_30px_rgba(34,197,94,0.15)]">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-green-500 mb-4 mx-auto shadow-sm group-hover:shadow-md transition-shadow group-hover:scale-110 transform">
+                            <i class="fa-solid fa-gavel text-2xl group-hover:animate-bounce"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Comparecientes ante la JEP</h4>
+                        <h4 class="font-bold text-slate-800 text-sm group-hover:text-green-600 transition-colors">Comparecientes ante la JEP</h4>
                     </div>
 
-                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-transform duration-300">
-                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mb-4 mx-auto shadow-sm">
-                            <i class="fa-solid fa-people-group text-2xl"></i>
+                    <div class="glass-card p-6 text-center hover:-translate-y-2 transition-all duration-300 group cursor-pointer hover:shadow-[0_15px_30px_rgba(168,85,247,0.15)]">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center text-purple-500 mb-4 mx-auto shadow-sm group-hover:shadow-md transition-shadow group-hover:scale-110 transform">
+                            <i class="fa-solid fa-people-group text-2xl group-hover:animate-bounce"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Población de la comunidad</h4>
+                        <h4 class="font-bold text-slate-800 text-sm group-hover:text-purple-600 transition-colors">Población de la comunidad</h4>
                     </div>
                 </div>
             </div>
@@ -577,9 +597,9 @@
         <div class="container mx-auto relative z-10">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-1">
-                    <div class="text-2xl font-bold text-white tracking-tighter flex items-center gap-2 mb-6">
-                        <i class="fa-solid fa-hands-holding-circle text-yellow-400"></i> AEC
-                    </div>
+                    <a href="#" class="inline-block mb-6 bg-white/10 p-3 rounded-2xl backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300">
+                        <img src="https://asoenlacecomunitario.com/IMAGENES/logoAEC.png" alt="AEC Logo" class="h-12 w-auto">
+                    </a>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">
                         Aso Enlace Comunitario. Trabajando juntos por un futuro restaurativo, sostenible y en paz.
                     </p>
