@@ -62,7 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select a wider variety of elements to animate for a cohesive feel
     const elementsToAnimate = document.querySelectorAll(`
+        .scroll-animate,
         .glass-card,
+        .solid-card-blue,
+        .solid-card-yellow,
         .gradient-pill,
         section h2,
         section p.max-w-2xl,
@@ -73,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `);
 
     elementsToAnimate.forEach((el, index) => {
-        el.classList.add('scroll-animate');
+        if (!el.classList.contains('scroll-animate')) {
+            el.classList.add('scroll-animate');
+        }
 
         // Add staggered delays for a cascading effect on adjacent elements
         // E.g., cards in a grid

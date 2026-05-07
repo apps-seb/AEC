@@ -230,69 +230,50 @@
         </section>
 
         <!-- Qué nos diferencia Section -->
-        <section class="py-20 px-6 relative z-10 perspective-1000 bg-gradient-to-br from-yellow-50 to-white">
-            <div class="container mx-auto">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full md:w-1/2 tilt-card" data-tilt>
-                        <div class="solid-card-blue p-8 relative overflow-hidden transform-style-3d">
-                            <h2 class="text-3xl font-bold text-white mb-6 transform translate-z-20">¿Qué nos Diferencia?</h2>
-                            <p class="text-sky-50 mb-6 leading-relaxed transform translate-z-10">
-                                En AEC, nuestro enfoque no es asistencialista, sino transformador. Nos distinguimos por nuestra capacidad de crear ecosistemas de desarrollo donde cada actor de la comunidad tiene un rol protagónico.
-                            </p>
-                            <ul class="space-y-4 transform translate-z-20">
-                                <li class="flex items-start gap-3 group">
-                                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                                        <i class="fa-solid fa-check text-sm"></i>
-                                    </div>
-                                    <span class="text-white font-medium mt-1">Enfoque restaurativo y reconciliador.</span>
-                                </li>
-                                <li class="flex items-start gap-3 group">
-                                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                                        <i class="fa-solid fa-check text-sm"></i>
-                                    </div>
-                                    <span class="text-white font-medium mt-1">Articulación de actores diversos en un mismo territorio.</span>
-                                </li>
-                                <li class="flex items-start gap-3 group">
-                                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                                        <i class="fa-solid fa-check text-sm"></i>
-                                    </div>
-                                    <span class="text-white font-medium mt-1">Sostenibilidad a largo plazo de los proyectos.</span>
-                                </li>
-                            </ul>
+        <section class="py-20 px-6 relative z-10 bg-gradient-to-br from-yellow-50 to-white overflow-hidden">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">¿Qué nos <span class="text-gradient-blue animate-pulse">Diferencia?</span></h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">Nuestro enfoque no es asistencialista, sino transformador. Creamos ecosistemas de desarrollo con la comunidad.</p>
+                </div>
+
+                <div class="relative wrap overflow-hidden p-10 h-full">
+                    <!-- Vertical Line -->
+                    <div class="absolute border-opacity-20 border-sky-400 h-full border-2 left-1/2 -translate-x-1/2 hidden md:block"></div>
+
+                    <!-- Timeline Item 1 -->
+                    <div class="mb-8 flex justify-between items-center w-full md:right-timeline flex-col md:flex-row scroll-animate">
+                        <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                        <div class="z-20 flex items-center order-1 bg-gradient-to-r from-sky-400 to-blue-500 shadow-xl w-12 h-12 rounded-full mb-4 md:mb-0 shrink-0">
+                            <i class="fa-solid fa-handshake-angle mx-auto text-white text-xl animate-pulse"></i>
+                        </div>
+                        <div class="order-1 solid-card-blue rounded-2xl shadow-xl w-full md:w-5/12 px-6 py-5 transform transition-transform hover:scale-105">
+                            <h3 class="font-bold text-white text-xl mb-2">Enfoque Restaurativo</h3>
+                            <p class="text-sm leading-snug tracking-wide text-sky-50">Centramos nuestros esfuerzos en la reconciliación y reparación verdadera dentro de los territorios afectados.</p>
                         </div>
                     </div>
-                    <div class="w-full md:w-1/2 grid grid-cols-2 gap-6">
-                        <div class="tilt-card" data-tilt>
-                            <div class="solid-card-yellow p-6 text-center animate-float transform-style-3d group cursor-pointer" style="animation-delay: 0s;">
-                                <div class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur flex items-center justify-center mb-4 transform translate-z-20 transition-shadow">
-                                    <i class="fa-solid fa-users text-3xl text-slate-800 group-hover:scale-110 transition-transform"></i>
-                                </div>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Inclusión</h4>
-                            </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="mb-8 flex justify-between md:flex-row-reverse items-center w-full md:left-timeline flex-col md:flex-row scroll-animate delay-100">
+                        <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                        <div class="z-20 flex items-center order-1 bg-gradient-to-r from-yellow-400 to-orange-500 shadow-xl w-12 h-12 rounded-full mb-4 md:mb-0 shrink-0">
+                            <i class="fa-solid fa-users-rays mx-auto text-white text-xl animate-pulse"></i>
                         </div>
-                        <div class="tilt-card mt-12" data-tilt>
-                            <div class="solid-card-blue p-6 text-center animate-float transform-style-3d group cursor-pointer" style="animation-delay: 0.5s;">
-                                <div class="w-16 h-16 mx-auto rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 transform translate-z-20 transition-shadow">
-                                    <i class="fa-solid fa-hand-holding-dollar text-3xl text-white group-hover:scale-110 transition-transform"></i>
-                                </div>
-                                <h4 class="font-bold text-white transform translate-z-10">Economía</h4>
-                            </div>
+                        <div class="order-1 solid-card-blue rounded-2xl shadow-xl w-full md:w-5/12 px-6 py-5 transform transition-transform hover:scale-105">
+                            <h3 class="font-bold text-white text-xl mb-2">Articulación Diversa</h3>
+                            <p class="text-sm leading-snug tracking-wide text-sky-50">Unimos a firmantes de paz, víctimas y comunidad general en un mismo proyecto colaborativo.</p>
                         </div>
-                        <div class="tilt-card -mt-12" data-tilt>
-                            <div class="solid-card-blue p-6 text-center animate-float transform-style-3d group cursor-pointer" style="animation-delay: 1s;">
-                                <div class="w-16 h-16 mx-auto rounded-full bg-white/20 backdrop-blur flex items-center justify-center mb-4 transform translate-z-20 transition-shadow">
-                                    <i class="fa-solid fa-seedling text-3xl text-white group-hover:scale-110 transition-transform"></i>
-                                </div>
-                                <h4 class="font-bold text-white transform translate-z-10">Ambiente</h4>
-                            </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="mb-8 flex justify-between items-center w-full md:right-timeline flex-col md:flex-row scroll-animate delay-200">
+                        <div class="order-1 w-full md:w-5/12 hidden md:block"></div>
+                        <div class="z-20 flex items-center order-1 bg-gradient-to-r from-sky-400 to-blue-500 shadow-xl w-12 h-12 rounded-full mb-4 md:mb-0 shrink-0">
+                            <i class="fa-solid fa-seedling mx-auto text-white text-xl animate-pulse"></i>
                         </div>
-                        <div class="tilt-card" data-tilt>
-                            <div class="solid-card-yellow p-6 text-center animate-float transform-style-3d group cursor-pointer" style="animation-delay: 1.5s;">
-                                <div class="w-16 h-16 mx-auto rounded-full bg-white/30 backdrop-blur flex items-center justify-center mb-4 transform translate-z-20 transition-shadow">
-                                    <i class="fa-solid fa-scale-balanced text-3xl text-slate-800 group-hover:scale-110 transition-transform"></i>
-                                </div>
-                                <h4 class="font-bold text-slate-800 transform translate-z-10">Justicia</h4>
-                            </div>
+                        <div class="order-1 solid-card-blue rounded-2xl shadow-xl w-full md:w-5/12 px-6 py-5 transform transition-transform hover:scale-105">
+                            <h3 class="font-bold text-white text-xl mb-2">Sostenibilidad a Largo Plazo</h3>
+                            <p class="text-sm leading-snug tracking-wide text-sky-50">Implementamos proyectos económicos viables que garantizan independencia y crecimiento continuo.</p>
                         </div>
                     </div>
                 </div>
@@ -308,72 +289,34 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto mb-12">
-                    <!-- Tarjeta 1 3D -->
-                    <div class="flip-card perspective-1000 h-[450px]">
-                        <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
-                            <!-- Front Face -->
-                            <div class="flip-card-front absolute w-full h-full backface-hidden">
-                                <div class="absolute inset-0 bg-white rounded-[22px] shadow-xl overflow-hidden notch-bottom-right flex flex-col">
-                                    <div class="h-56 bg-slate-100 overflow-hidden shrink-0">
-                                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop" alt="Trabajo comunitario" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="p-8 flex-grow flex flex-col justify-center">
-                                        <h3 class="text-2xl font-bold text-slate-800 pr-4">Nuestro compromiso como asociación</h3>
-                                    </div>
-                                </div>
-                                <button class="flip-btn absolute bottom-2 right-2 w-14 h-14 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center text-white text-2xl shadow-[0_4px_15px_rgba(56,189,248,0.5)] hover:scale-110 transition-transform z-10" aria-label="Ver más">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
+                    <!-- Tarjeta 1 -->
+                    <div class="group h-full p-1 rounded-[24px] bg-gradient-to-br from-sky-400 to-blue-600 hover:shadow-[0_20px_40px_-10px_rgba(14,165,233,0.5)] transition-all duration-300 scroll-animate">
+                        <div class="bg-white rounded-[20px] h-full overflow-hidden flex flex-col relative z-10">
+                            <div class="h-56 overflow-hidden shrink-0 relative">
+                                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1000&auto=format&fit=crop" alt="Trabajo comunitario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                             </div>
-
-                            <!-- Back Face -->
-                            <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180">
-                                <div class="absolute inset-0 bg-gradient-to-br from-sky-400 to-blue-600 rounded-[22px] shadow-xl p-1 notch-bottom-right flex flex-col">
-                                    <div class="bg-white rounded-[20px] h-full p-8 flex flex-col relative z-10">
-                                        <h3 class="text-2xl font-bold text-slate-800 mb-4 pr-6">Nuestro compromiso</h3>
-                                        <p class="text-slate-600 leading-relaxed overflow-y-auto">
-                                            Nos comprometemos a acciones especificas de reparación, como restitución, compensación, o trabajo comunitario a través de la asociación sin ánimo de lucro (Aso-Enlace Comunitario).
-                                        </p>
-                                    </div>
-                                </div>
-                                <button class="flip-btn absolute bottom-2 right-2 w-14 h-14 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-blue-500 text-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:scale-110 transition-transform z-10" aria-label="Volver">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
+                            <div class="p-8 flex-grow flex flex-col">
+                                <h3 class="text-2xl font-bold mb-4 pr-4"><span class="text-gradient-blue">Nuestro compromiso como asociación</span></h3>
+                                <p class="text-slate-600 leading-relaxed flex-grow">
+                                    Nos comprometemos a acciones especificas de reparación, como restitución, compensación, o trabajo comunitario a través de la asociación sin ánimo de lucro (Aso-Enlace Comunitario).
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2 3D -->
-                    <div class="flip-card perspective-1000 h-[450px]">
-                        <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
-                            <!-- Front Face -->
-                            <div class="flip-card-front absolute w-full h-full backface-hidden">
-                                <div class="absolute inset-0 bg-white rounded-[22px] shadow-xl overflow-hidden notch-bottom-right flex flex-col">
-                                    <div class="h-56 bg-slate-100 overflow-hidden shrink-0">
-                                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1000&auto=format&fit=crop" alt="Comunidad escuchando" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="p-8 flex-grow flex flex-col justify-center">
-                                        <h3 class="text-2xl font-bold text-slate-800 pr-4">Escuchamos sus voces, honramos su verdad</h3>
-                                    </div>
-                                </div>
-                                <button class="flip-btn absolute bottom-2 right-2 w-14 h-14 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center text-white text-2xl shadow-[0_4px_15px_rgba(56,189,248,0.5)] hover:scale-110 transition-transform z-10" aria-label="Ver más">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
+                    <!-- Tarjeta 2 -->
+                    <div class="group h-full p-1 rounded-[24px] bg-gradient-to-br from-sky-400 to-blue-600 hover:shadow-[0_20px_40px_-10px_rgba(14,165,233,0.5)] transition-all duration-300 scroll-animate delay-100">
+                        <div class="bg-white rounded-[20px] h-full overflow-hidden flex flex-col relative z-10">
+                            <div class="h-56 overflow-hidden shrink-0 relative">
+                                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1000&auto=format&fit=crop" alt="Comunidad escuchando" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                             </div>
-
-                            <!-- Back Face -->
-                            <div class="flip-card-back absolute w-full h-full backface-hidden rotate-y-180">
-                                <div class="absolute inset-0 bg-gradient-to-br from-sky-400 to-blue-600 rounded-[22px] shadow-xl p-1 notch-bottom-right flex flex-col">
-                                    <div class="bg-white rounded-[20px] h-full p-8 flex flex-col relative z-10">
-                                        <h3 class="text-xl font-bold text-slate-800 mb-3 pr-6">Escuchamos sus voces</h3>
-                                        <p class="text-slate-600 leading-relaxed text-sm overflow-y-auto">
-                                            Estamos decididos a trabajar codo a codo con las víctimas y sus familias para construir un camino hacia la reparación verdadera. Este proyecto de Vivienda Rural Productiva no es solo un hogar, sino un símbolo de justicia, reconciliación y esperanza. Sabemos que la sanación empieza con el perdón, y juntos, con fuerza y determinación, avanzamos hacia una comunidad más unida y resiliente.
-                                        </p>
-                                    </div>
-                                </div>
-                                <button class="flip-btn absolute bottom-2 right-2 w-14 h-14 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-blue-500 text-2xl shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:scale-110 transition-transform z-10" aria-label="Volver">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
+                            <div class="p-8 flex-grow flex flex-col">
+                                <h3 class="text-2xl font-bold mb-4 pr-4"><span class="text-gradient-blue">Escuchamos sus voces, honramos su verdad</span></h3>
+                                <p class="text-slate-600 leading-relaxed text-sm flex-grow">
+                                    Estamos decididos a trabajar codo a codo con las víctimas y sus familias para construir un camino hacia la reparación verdadera. Este proyecto de Vivienda Rural Productiva no es solo un hogar, sino un símbolo de justicia, reconciliación y esperanza. Sabemos que la sanación empieza con el perdón, y juntos avanzamos hacia una comunidad unida.
+                                </p>
                             </div>
                         </div>
                     </div>
