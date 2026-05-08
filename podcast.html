@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La otra cara de la moneda - AEC</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="podcast.css">
 </head>
@@ -140,8 +140,10 @@
                 </button>
                 <div class="font-bold text-xl tracking-widest uppercase text-gradient-yellow" id="story-title">El Cuento</div>
                 <div class="flex items-center gap-4">
+                    <!-- Reproducir is triggered on cover button now -->
+                    <!-- toggleTTS is kept as a pause/play/toggle for the current page -->
                     <button id="tts-toggle" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 transition-colors" title="Activar/Desactivar Lectura" onclick="toggleTTS()">
-                        <i class="fa-solid fa-volume-high" id="tts-icon"></i>
+                        <i class="fa-solid fa-volume-xmark" id="tts-icon"></i>
                     </button>
                 </div>
             </div>
