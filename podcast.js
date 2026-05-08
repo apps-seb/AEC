@@ -8,17 +8,17 @@ const firmantes = [
         video: "https://www.w3schools.com/html/mov_bbb.mp4",
         audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         historiaHtml: `
-            <p>Carlos encontró en la tierra la paz que las armas nunca le dieron. Hoy lidera un proyecto de cultivo de café orgánico en el Tolima.</p>
-            <p>"El verdadero cambio empezó cuando me di cuenta de que mis manos podían sembrar vida en lugar de destruirla", menciona Carlos mientras nos muestra su cafetal.</p>
-            <p>La comunidad, que al principio sentía recelo, ahora trabaja hombro a hombro con él, demostrando que la reconciliación es un proceso diario y tangible.</p>
+            <p>Carlos pasó gran parte de su juventud inmerso en la espesura de la selva colombiana, enfrentando la dureza del conflicto armado y noches interminables de incertidumbre y dolor.</p>
+            <p>Hoy, tras firmar el acuerdo de paz, ha encontrado en la tierra la paz que las armas jamás le dieron. Lidera un hermoso proyecto de cultivo de café orgánico en las montañas del Tolima.</p>
+            <p>"El verdadero cambio empezó cuando me di cuenta de que mis manos podían sembrar vida en lugar de destruirla", menciona Carlos con la mirada llena de esperanza.</p>
         `,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1505934333218-8fe219d08316?q=80&w=800", text: "Había una vez, en un rincón escondido entre montañas verdes y nubes juguetonas, un joven soñador llamado Carlos. Desde pequeño, había caminado por senderos difíciles y oscuros, buscando su lugar en el mundo." },
-            { img: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=800", text: "Tras muchos años de tormentas y días grises, Carlos sintió en su corazón que era el momento de dejar atrás el ruido y el estruendo. Anhelaba la calma de la naturaleza y el canto de los pájaros al amanecer." },
-            { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800", text: "Sus manos, que antes estaban marcadas por la rudeza de un camino empinado, se abrieron para recibir un regalo de la tierra: unas pequeñas semillas mágicas que parecían esconder un gran secreto. ¡Eran granos de café!" },
-            { img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", text: "Con infinita paciencia, amor y dedicación, Carlos cuidó esas semillas. Poco a poco, el café floreció y su delicioso aroma se esparció por el valle, uniendo a todo el pueblo en un cálido abrazo lleno de esperanza y sonrisas." },
-            { img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800", text: "El trabajo en la tierra sanaba sus heridas día con día. Cada planta que crecía le recordaba que la vida siempre encuentra la forma de abrirse paso, incluso después de los inviernos más duros." },
-            { img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800", text: "Hoy, Carlos enseña a los más jóvenes los secretos de la tierra y del café. Su historia es la prueba de que el amor y el trabajo honesto pueden transformar por completo el destino de cualquier persona." }
+            { img: "https://images.unsplash.com/photo-1505934333218-8fe219d08316?q=80&w=800", text: "Había una vez un joven llamado Carlos, cuyos días transcurrían entre las sombras largas y húmedas de la espesa selva colombiana. Su vida estaba marcada por el peso del fusil y el eco lejano del conflicto." },
+            { img: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=800", text: "Fueron años de duras tormentas, noches frías de miedo y días de incertidumbre. En el silencio de la selva, Carlos a menudo cerraba los ojos, soñando con un lugar donde el ruido ensordecedor fuera reemplazado por la calma." },
+            { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800", text: "Un día luminoso, tras la firma de la paz, la selva dejó de ser un refugio de guerra para convertirse en un paisaje de posibilidades. Carlos guardó su arma para siempre, sintiendo cómo un enorme peso se desvanecía de sus hombros." },
+            { img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", text: "Sus manos, antes curtidas por la rudeza y la tristeza, descubrieron la magia de la tierra. Comenzó a sembrar con infinito amor y dedicación, cuidando pequeñas semillas que pronto se transformaron en frondosos arbustos de café." },
+            { img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800", text: "El trabajo honesto en el campo empezó a sanar sus heridas más profundas. Cada grano de café que cosechaba representaba una victoria de la vida, un paso más hacia la reconciliación y un abrazo cálido a su comunidad." },
+            { img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800", text: "Hoy, Carlos camina por sus cafetales con el corazón lleno de paz. Su historia es un testimonio viviente de que, sin importar cuán oscuro haya sido el bosque, la luz de la esperanza siempre puede hacernos florecer de nuevo." }
         ]
     },
     {
@@ -29,16 +29,17 @@ const firmantes = [
         video: "https://www.w3schools.com/html/mov_bbb.mp4",
         audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
         historiaHtml: `
-            <p>Marta pasó más de 15 años en las filas. Ahora, en un pequeño taller, hila historias y reconciliación junto a mujeres víctimas del conflicto.</p>
-            <p>Su proyecto textil no solo ha sido un éxito económico, sino un poderoso espacio terapéutico.</p>
+            <p>Marta pasó más de 15 años en la selva, perdiendo su juventud entre el fango, el frío y el miedo constante de no ver un mañana. El acuerdo de paz significó para ella un renacer inesperado.</p>
+            <p>Ahora, en un pequeño y colorido taller, hila historias de reconciliación junto a mujeres víctimas del conflicto, transformando el dolor en hermosos tejidos.</p>
+            <p>Su proyecto textil no solo ha sido un éxito económico, sino un poderoso espacio de sanación y empoderamiento femenino.</p>
         `,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1605814046045-8b17b6a67fbd?q=80&w=800", text: "En un valle donde el viento soplaba suavemente, vivía Marta. Desde que era una niña, Marta había conocido los nudos de la tristeza y los hilos enredados de una vida llena de desafíos." },
-            { img: "https://images.unsplash.com/photo-1581452902640-1e5f8ceb4d58?q=80&w=800", text: "Un hermoso día iluminado por el sol, Marta tomó una valiente decisión: desatar esos nudos uno por uno. Con una sonrisa, fue a buscar hilos de todos los colores brillantes del arcoíris." },
-            { img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800", text: "Marta no estaba sola. Junto a otras mujeres valientes, comenzó a tejer. Puntada a puntada, crearon una manta inmensa y hermosa que cubrió de alegría, color y paz todas las cicatrices del valle." },
-            { img: "https://images.unsplash.com/photo-1544413660-299165566b1d?q=80&w=800", text: "El taller se llenó de risas, de canciones y de historias compartidas. Las agujas se movían con ritmo, tejiendo no solo lana, sino también lazos irrompibles de amistad y comprensión." },
-            { img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800", text: "Sus creaciones viajaron por todo el país, llevando consigo el mensaje de que, aunque la vida a veces nos enrede, siempre podemos volver a tejerla con amor y esperanza." },
-            { img: "https://images.unsplash.com/photo-1490237014491-822aee911b99?q=80&w=800", text: "Hoy, Marta es la maestra de los colores y las texturas. Ha demostrado que el arte sana el alma y que juntas, las mujeres pueden construir un mundo mucho más hermoso." }
+            { img: "https://images.unsplash.com/photo-1605814046045-8b17b6a67fbd?q=80&w=800", text: "Desde muy joven, Marta conoció los rincones más agrestes de la selva. La humedad, el fango y las marchas interminables tejieron en su corazón nudos apretados de tristeza y soledad." },
+            { img: "https://images.unsplash.com/photo-1581452902640-1e5f8ceb4d58?q=80&w=800", text: "Había momentos de llanto silencioso bajo la lluvia implacable, preguntándose si algún día el mundo dejaría de ser un campo de batalla. La selva era su única confidente, guardiana de sus miedos y sus anhelos más profundos." },
+            { img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800", text: "Pero el milagro de la paz llegó como un amanecer brillante. Marta dejó atrás las botas desgastadas y el uniforme oscuro, tomando la valiente decisión de desatar los nudos del pasado para comenzar a tejer una nueva vida." },
+            { img: "https://images.unsplash.com/photo-1544413660-299165566b1d?q=80&w=800", text: "Buscó hilos de todos los colores vibrantes del arcoíris y se unió a otras mujeres valientes, algunas que alguna vez estuvieron en lados opuestos. Juntas descubrieron que el perdón era el hilo más fuerte de todos." },
+            { img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800", text: "El taller de costura se llenó rápidamente de risas, canciones de cuna y lágrimas compartidas. Cada puntada cerraba una vieja herida, creando mantas maravillosas que abrazaban y daban calor a las almas lastimadas." },
+            { img: "https://images.unsplash.com/photo-1490237014491-822aee911b99?q=80&w=800", text: "Hoy, Marta es la maestra de los colores y la esperanza. Ha demostrado con creces que, incluso después del invierno más desgarrador, el amor y la unión pueden reconstruir un mundo lleno de belleza y paz." }
         ]
     },
     {
@@ -48,14 +49,17 @@ const firmantes = [
         foto: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop",
         video: "https://www.w3schools.com/html/mov_bbb.mp4",
         audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        historiaHtml: `<p>Luis se dedica a enseñar lectura y escritura a niños en zonas rurales aisladas.</p>`,
+        historiaHtml: `
+            <p>Luis Felipe creció rodeado de combates, aprendiendo a sobrevivir en un entorno hostil donde los libros y las letras parecían un lujo inalcanzable. El proceso de paz le dio la oportunidad de reescribir su destino.</p>
+            <p>Conmovido por la inocencia de los niños de su comunidad, hoy se dedica a enseñar lectura y escritura en zonas rurales apartadas, convencido de que la educación es la verdadera semilla de la paz.</p>
+        `,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", text: "En un pueblito donde las estrellas brillaban más que en ningún otro lado, vivía Luis. A donde quiera que iba, Luis llevaba consigo un cuaderno viejo y gastado, pero que estaba lleno de grandes sueños y hermosos pensamientos." },
-            { img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800", text: "Pronto, Luis hizo un gran descubrimiento: se dio cuenta de que las letras y las palabras eran herramientas mágicas, mucho más poderosas que cualquier otra cosa que hubiera conocido en su vida." },
-            { img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800", text: "Con gran entusiasmo, reunió a los niños del pueblito y comenzó a enseñarles a leer y a escribir. Las palabras se convirtieron en alas, y juntos volaron hacia un futuro lleno de imaginación y esperanza." },
-            { img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800", text: "La escuelita improvisada bajo el gran árbol se convirtió en el lugar favorito de todos. Allí no existía el miedo, solo la curiosidad inmensa de descubrir nuevos mundos en las páginas de los libros." },
-            { img: "https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=800", text: "A veces, Luis les contaba historias de héroes que no usaban espadas, sino palabras amables y abrazos para vencer la oscuridad. Los niños escuchaban maravillados." },
-            { img: "https://images.unsplash.com/photo-1427504494785-319ce8372ac0?q=80&w=800", text: "Así fue como Luis, el sembrador de letras, cultivó una generación de niños sabios y felices, demostrando que la verdadera paz comienza con la educación y el amor." }
+            { img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", text: "Luis Felipe pasó muchos años de su vida recorriendo trochas oscuras y senderos peligrosos, donde el sonido ensordecedor de los combates ahogaba cualquier canción de cuna. Su mundo estaba pintado en tonos grises y de temor." },
+            { img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800", text: "En medio de la rudeza de la selva, Luis Felipe atesoraba un secreto: un pequeño cuaderno desgastado donde dibujaba sueños de un país diferente, un país donde los niños pudieran correr libremente sin mirar al cielo con miedo." },
+            { img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800", text: "Cuando finalmente se firmó el acuerdo de paz, Luis Felipe sintió que despertaba de una larga pesadilla. Pudo por fin abrazar a su familia sin el temor a despedidas forzadas y descubrió el poder transformador de la libertad." },
+            { img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800", text: "Decidió entonces que su nueva misión sería ser un sembrador de palabras. Reunió a los niños de su pueblo bajo un gran árbol y, con paciencia infinita, les enseñó que las letras son herramientas mágicas para construir puentes." },
+            { img: "https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=800", text: "Las aulas improvisadas se llenaron de luz e imaginación. Luis les contaba historias de héroes valientes que usaban libros y abrazos para vencer la oscuridad, inspirando a cada niño a soñar en grande." },
+            { img: "https://images.unsplash.com/photo-1427504494785-319ce8372ac0?q=80&w=800", text: "Hoy, Luis Felipe es un faro de esperanza en su comunidad. Ha demostrado que el conocimiento salva vidas y que, a través de la educación y el amor, es posible escribir un capítulo luminoso en la historia de la humanidad." }
         ]
     }
 ];
@@ -148,8 +152,23 @@ function showStory() {
     if(!currentProfile || !currentProfile.cuento) return;
     showView('story');
 
-    const container = document.getElementById('book-container');
-    container.innerHTML = ''; // Limpiar previo
+    // Destruir PageFlip antes de limpiar el contenedor
+    if(pageFlip) {
+        pageFlip.destroy();
+        pageFlip = null;
+    }
+
+    // Recrear completamente el contenedor del libro para evitar bugs de StPageFlip
+    const wrapper = document.getElementById('book-wrapper');
+    let container = document.getElementById('book-container');
+    if (container) {
+        container.remove();
+    }
+
+    container = document.createElement('div');
+    container.id = 'book-container';
+    container.className = 'relative shadow-2xl transition-transform duration-500 mb-10';
+    wrapper.insertBefore(container, wrapper.firstChild);
 
     // Portada
     container.innerHTML += `
@@ -193,8 +212,6 @@ function showStory() {
     `;
 
     // Inicializar PageFlip
-    if(pageFlip) pageFlip.destroy();
-
     // Configuración responsiva para PageFlip
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const isMobile = vw < 768;
@@ -269,11 +286,24 @@ function toggleTTS() {
 // Inicia la lectura desde la portada
 function startReadingStory(e) {
     e.stopPropagation();
-    if (!isTTSActive) {
-        toggleTTS(); // Activa el audio
-    }
+
+    // Configurar estado de TTS activo
+    isTTSActive = true;
+    const btn = document.getElementById('tts-toggle');
+    const icon = document.getElementById('tts-icon');
+    icon.className = 'fa-solid fa-volume-high';
+    btn.classList.replace('bg-slate-800', 'bg-sky-600');
+
     if (pageFlip) {
-        pageFlip.flip(1); // Pasa directamente a la página 1, la que tiene texto e imágenes
+        // Detener cualquier lectura previa antes de iniciar
+        stopTTS();
+
+        const currentPage = pageFlip.getCurrentPageIndex();
+        if (currentPage !== 1) {
+            pageFlip.flip(1); // Al cambiar de página, el evento 'flip' llamará a readCurrentPages
+        } else {
+            readCurrentPages(1); // Si ya estamos en la página 1, leemos directamente
+        }
     }
 }
 
