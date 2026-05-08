@@ -152,32 +152,39 @@ function showStory() {
     if(!currentProfile || !currentProfile.cuento) return;
     showView('story');
 
-    // Destruir PageFlip antes de limpiar el contenedor
+    // MÁGIA AQUÍ: Esperamos a que la vista tenga dimensiones reales en el DOM antes de instanciar PageFlip
+    setTimeout(() => {
+        initBook();
+    }, 150);
+}
+
+function initBook() {
+    const wrapper = document.getElementById('book-wrapper');
+    
+    // Destrucción limpia absoluta
     if(pageFlip) {
-        pageFlip.destroy();
+        try { pageFlip.destroy(); } catch(e) {}
         pageFlip = null;
     }
 
-    // Recrear completamente el contenedor del libro para evitar bugs de StPageFlip
-    const wrapper = document.getElementById('book-wrapper');
-    let container = document.getElementById('book-container');
-    if (container) {
-        container.remove();
+    let oldContainer = document.getElementById('book-container');
+    if (oldContainer) {
+        oldContainer.remove();
     }
 
-    container = document.createElement('div');
+    const container = document.createElement('div');
     container.id = 'book-container';
-    container.className = 'relative shadow-2xl transition-transform duration-500 mb-10';
+    container.className = 'relative shadow-2xl transition-transform duration-500 mx-auto';
     wrapper.insertBefore(container, wrapper.firstChild);
 
     // Portada
     container.innerHTML += `
-        <div class="page">
+        <div class="page hard">
             <div class="page-content">
                 <div class="page-text text-center flex flex-col justify-center items-center h-full">
                     <h2 class="text-3xl font-bold mb-4 text-gradient-yellow">El Cuento de</h2>
                     <h1 class="text-5xl font-extrabold mb-8">${currentProfile.nombre}</h1>
-                    <button class="mt-8 btn-premium btn-blue text-lg shadow-xl shadow-sky-500/50 hover:scale-110" onclick="startReadingStory(event)">
+                    <button class="mt-8 btn-premium btn-blue text-lg shadow-xl shadow-sky-500/50 hover:scale-110 z-50" onclick="startReadingStory(event)">
                         <i class="fa-solid fa-play mr-2"></i> Reproducir
                     </button>
                 </div>
@@ -194,14 +201,13 @@ function showStory() {
                     <img src="${p.img}" class="page-image" alt="Ilustración">
                     <div class="page-text dynamic-story-text" data-story-index="${index}">${wrappedText}</div>
                 </div>
-                <div class="page-number">${index + 1}</div>
             </div>
         `;
     });
 
     // Contraportada
     container.innerHTML += `
-        <div class="page">
+        <div class="page hard">
             <div class="page-content">
                 <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800" class="page-image" alt="Libro cerrado">
                 <div class="page-text text-center flex flex-col justify-center items-center h-full">
@@ -212,40 +218,40 @@ function showStory() {
     `;
 
     // Inicializar PageFlip
-    // Configuración responsiva para PageFlip
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const isMobile = vw < 768;
 
-    // @ts-ignore (StPageFlip importado vía CDN)
+    // @ts-ignore
     pageFlip = new St.PageFlip(document.getElementById('book-container'), {
-        width: isMobile ? 300 : 400, // width base de una página
-        height: isMobile ? 450 : 550, // height base de una página
+        width: isMobile ? 320 : 450,
+        height: isMobile ? 480 : 600,
         size: "stretch",
-        minWidth: 200,
-        maxWidth: 600,
-        minHeight: 300,
-        maxHeight: 800,
+        minWidth: 250,
+        maxWidth: 650,
+        minHeight: 350,
+        maxHeight: 850,
         maxShadowOpacity: 0.5,
-        showCover: false, // Ensure we don't treat the first/last pages uniquely for viewing
+        showCover: true,
         mobileScrollSupport: false
     });
 
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 
-    // Evento de cambio de página para TTS
+    // Evento de cambio de página
     pageFlip.on('flip', (e) => {
-        // Reproducir sonido de cambio de página
         flipSound.currentTime = 0;
         flipSound.play().catch(e => console.log('Audio autoplay prevented'));
 
-        // Transición colorida de página
         document.getElementById('view-story').classList.add('page-transition-flash');
         setTimeout(() => {
             document.getElementById('view-story').classList.remove('page-transition-flash');
         }, 500);
 
+        updatePageIndicator(e.data);
+
         if(isTTSActive) {
-            readCurrentPages(e.data);
+            // Un pequeño delay evita que la voz se corte por la carga del DOM
+            setTimeout(() => readCurrentPages(e.data), 300);
         }
     });
 
@@ -257,6 +263,18 @@ function showStory() {
     isTTSActive = false;
     document.getElementById('tts-icon').className = 'fa-solid fa-volume-xmark';
     document.getElementById('tts-toggle').classList.replace('bg-sky-600', 'bg-slate-800');
+    
+    // Iniciar indicador
+    updatePageIndicator(0);
+}
+
+function updatePageIndicator(currentIndex) {
+    if(!pageFlip) return;
+    const total = pageFlip.getPageCount();
+    // Ajustamos la lógica visual: la portada es 0, las páginas internas son reales, contraportada es el fin.
+    let displayPage = currentIndex;
+    let displayTotal = total - 1; 
+    document.getElementById('page-indicator-text').textContent = `${displayPage} / ${displayTotal}`;
 }
 
 function closeStory() {
@@ -285,7 +303,7 @@ function toggleTTS() {
 
 // Inicia la lectura desde la portada
 function startReadingStory(e) {
-    e.stopPropagation();
+    if(e) e.stopPropagation();
 
     // Configurar estado de TTS activo
     isTTSActive = true;
@@ -318,98 +336,79 @@ function readCurrentPages(pageIndex) {
     const mode = pageFlip.getOrientation();
     const visiblePages = [];
 
-    // Con showCover: false, los índices en landscape van de 2 en 2 (0,1), (2,3)
     if (mode === 'portrait') {
         visiblePages.push(pageIndex);
     } else { // landscape
-        // pageIndex is the left page
         visiblePages.push(pageIndex);
-        // right page
         if (pageIndex + 1 < pageFlip.getPageCount()) {
             visiblePages.push(pageIndex + 1);
         }
     }
 
     let phrases = [];
-
-    // Map the visible pages to the correct story index.
-    // Page 0 = Cover
-    // Page 1 to N = currentProfile.cuento (index 0 to N-1)
-    // Page N+1 = Fin.
-
     let leftStoryIndex = -1;
     let rightStoryIndex = -1;
 
     visiblePages.forEach((pIndex, i) => {
-        if (pIndex === 0) {
-            // No leemos la portada cuando se está leyendo el contenido normalmente
-            // A menos que explícitamente se pida leer la portada
-        } else if (pIndex <= currentProfile.cuento.length) {
+        if (pIndex > 0 && pIndex <= currentProfile.cuento.length) {
             const storyIdx = pIndex - 1;
             phrases.push({text: currentProfile.cuento[storyIdx].text, index: storyIdx});
             if (i === 0) leftStoryIndex = storyIdx;
             if (i === 1) rightStoryIndex = storyIdx;
         } else if (pIndex === currentProfile.cuento.length + 1) {
-            phrases.push({text: "Fin.", index: currentProfile.cuento.length});
-            if (i === 0) leftStoryIndex = currentProfile.cuento.length;
-            if (i === 1) rightStoryIndex = currentProfile.cuento.length;
+            phrases.push({text: "Fin del relato.", index: currentProfile.cuento.length});
         }
     });
 
-
     if(phrases.length > 0) {
-        const fullText = phrases.map(p => p.text).join(' . '); // Join with dot to add pause
-        const utterance = new SpeechSynthesisUtterance(fullText);
-        utterance.lang = 'es-ES'; // O 'es-CO'
-        utterance.rate = 0.9; // Velocidad un poco más lenta para cuento
+        // Envolvemos el speak en un pequeño timeout después del stopTTS para limpiar la caché de audio del navegador
+        setTimeout(() => {
+            const fullText = phrases.map(p => p.text).join(' ... '); // Join with dot to add pause
+            const utterance = new SpeechSynthesisUtterance(fullText);
+            utterance.lang = 'es-ES'; // O 'es-CO'
+            utterance.rate = 0.9; // Velocidad un poco más lenta para cuento
 
-        let wordCount = 0;
+            let wordCount = 0;
 
-        utterance.onboundary = (event) => {
-            if (event.name === 'word') {
-                // Remover clases anteriores
-                document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
+            utterance.onboundary = (event) => {
+                if (event.name === 'word') {
+                    // Remover clases anteriores
+                    document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
 
-                // Encontrar el span correspondiente.
-                // Dado que concatenamos textos, necesitamos un selector más general para buscar el n-ésimo span.
-                // Buscamos los spans en las páginas actualmente visibles
-                const visibleSpans = [];
-                if (leftStoryIndex >= 0) {
-                    const leftContainer = document.querySelector(`.dynamic-story-text[data-story-index="${leftStoryIndex}"]`);
-                    if(leftContainer) visibleSpans.push(...leftContainer.querySelectorAll('.word-span'));
+                    const visibleSpans = [];
+                    if (leftStoryIndex >= 0) {
+                        const leftContainer = document.querySelector(`.dynamic-story-text[data-story-index="${leftStoryIndex}"]`);
+                        if(leftContainer) visibleSpans.push(...leftContainer.querySelectorAll('.word-span'));
+                    }
+                    if (rightStoryIndex >= 0) {
+                        const rightContainer = document.querySelector(`.dynamic-story-text[data-story-index="${rightStoryIndex}"]`);
+                        if(rightContainer) visibleSpans.push(...rightContainer.querySelectorAll('.word-span'));
+                    }
+
+                    const textUpToBoundary = fullText.substring(0, event.charIndex);
+                    const currentWordIndex = textUpToBoundary.split(/\s+/).filter(w => w.trim().length > 0).length;
+
+                    if (visibleSpans[currentWordIndex]) {
+                        visibleSpans[currentWordIndex].classList.add('word-highlight');
+                    } else if (visibleSpans[wordCount]) {
+                        // Fallback
+                        visibleSpans[wordCount].classList.add('word-highlight');
+                    }
+                    wordCount++;
                 }
-                if (rightStoryIndex >= 0) {
-                    const rightContainer = document.querySelector(`.dynamic-story-text[data-story-index="${rightStoryIndex}"]`);
-                    if(rightContainer) visibleSpans.push(...rightContainer.querySelectorAll('.word-span'));
-                }
+            };
 
-                // Aproximación simple: iluminar el span en el índice del conteo de palabras del evento.
-                // Como las APIs de SpeechSynthesis pueden separar palabras de distinta manera (por puntuación),
-                // esto es una aproximación visual.
-                // Determinamos el índice aproximado contando las palabras hasta event.charIndex
-                const textUpToBoundary = fullText.substring(0, event.charIndex);
-                const currentWordIndex = textUpToBoundary.split(/\s+/).filter(w => w.trim().length > 0).length;
-
-                if (visibleSpans[currentWordIndex]) {
-                    visibleSpans[currentWordIndex].classList.add('word-highlight');
-                } else if (visibleSpans[wordCount]) {
-                    // Fallback
-                    visibleSpans[wordCount].classList.add('word-highlight');
-                }
-                wordCount++;
+            utterance.onend = () => {
+                 document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
             }
-        };
 
-        utterance.onend = () => {
-             document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
-        }
-
-        synth.speak(utterance);
+            synth.speak(utterance);
+        }, 100);
     }
 }
 
 function stopTTS() {
-    if(synth.speaking) {
+    if(synth && synth.speaking) {
         synth.cancel();
     }
 }
