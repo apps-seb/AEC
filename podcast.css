@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-sky: #0ea5e9;
+  --yellow-grad-start: #FFD700;
+  --yellow-grad-end: #FFA500;
+}
+
+body {
+    background-color: #f8fafc;
+    background-attachment: fixed;
+}
+
+/* App-style Global Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 215, 0, 0.05), transparent 25%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header Glass */
+.glass-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Cards */
+.solid-card-blue {
+    background: linear-gradient(135deg, #7dd3fc, #0ea5e9);
+    border-radius: 28px;
+    box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.3);
+    color: white;
+}
+
+.solid-card-yellow {
+    background: linear-gradient(135deg, #FFE600, #FFD700);
+    border-radius: 28px;
+    box-shadow: 0 10px 40px -10px rgba(255, 215, 0, 0.3);
+    color: #1e293b;
+}
+
+/* Buttons */
+.btn-premium {
+    border-radius: 9999px;
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(14, 165, 233, 0.3);
+}
+.btn-blue {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    color: white;
+}
+
+/* Gradients */
+.text-gradient-blue {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-yellow {
+    background: linear-gradient(135deg, #FF8C00, #FFE600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Scroll Animation */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* View Sections */
+.view-section {
+    position: absolute;
+    top: 0; left: 0;
+}
+.view-section:not(.active) {
+    display: none;
+}
+.view-section.active {
+    display: block;
+    position: relative;
+    opacity: 1;
+}
+
+/* Book / PageFlip Styles */
+.page {
+    background-color: #fffdf5; /* Color hoja de libro viejo */
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sombra en el centro del libro */
+.page.--left {
+    border-right: 1px solid rgba(0,0,0,0.1);
+    box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+}
+.page.--right {
+    border-left: 1px solid rgba(0,0,0,0.1);
+    box-shadow: inset 10px 0 20px rgba(0,0,0,0.05);
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.page-text {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    flex-grow: 1;
+    overflow-y: hidden;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 1rem;
+    font-family: Georgia, serif;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+.page.--left .page-number { left: 2rem; }
+.page.--right .page-number { right: 2rem; }
+
+/* Portada del libro */
+.page.hard {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 2px solid #334155;
+    color: white;
+}
+.page.hard .page-text {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

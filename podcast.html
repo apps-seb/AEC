@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La otra cara de la moneda - AEC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="podcast.css">
+</head>
+<body class="font-inter bg-slate-50 text-slate-800 overflow-x-hidden antialiased selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300 shadow-sm" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="https://asoenlacecomunitario.com/IMAGENES/logoAEC.png" alt="AEC Logo" class="h-10 w-auto drop-shadow-sm hover:scale-105 transition-transform duration-300">
+            </a>
+            <div class="font-bold text-slate-800 tracking-tight">La otra cara de la moneda</div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#inicio" class="hover:text-sky-500 transition-colors">Inicio</a>
+                <a href="#directorio" class="hover:text-sky-500 transition-colors">Firmantes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- App Container -->
+    <main id="app-container" class="relative w-full min-h-screen">
+
+        <!-- ==============================================
+             VISTA 1: Módulo 1 & 2 (Inicio y Directorio)
+             ============================================== -->
+        <div id="view-home" class="view-section active w-full transition-opacity duration-500">
+
+            <!-- Landing Hero -->
+            <section id="inicio" class="relative min-h-[80vh] flex items-center justify-center pt-20">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-50" alt="Paisaje campo">
+                </div>
+                <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl scroll-animate">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg">
+                        La otra cara <br> <span class="text-gradient-yellow">de la moneda</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-200 mb-10 font-light drop-shadow-md">
+                        Historias de vida, resiliencia y el día a día de los firmantes de paz tras la desmovilización. Una invitación a la empatía y la reconciliación.
+                    </p>
+                    <button class="btn-premium btn-blue text-lg" onclick="document.getElementById('directorio').scrollIntoView({behavior: 'smooth'})">
+                        Conocer las historias <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Directorio de Firmantes -->
+            <section id="directorio" class="py-20 px-6 bg-slate-50 min-h-screen">
+                <div class="container mx-auto">
+                    <div class="text-center mb-16 scroll-animate">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">Directorio de <span class="text-gradient-blue animate-pulse">Firmantes</span></h2>
+                        <p class="text-slate-600 max-w-2xl mx-auto text-lg">Descubre a los protagonistas de nuestra historia y acércate a su realidad.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="directorio-grid">
+                        <!-- Las tarjetas se generan vía JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==============================================
+             VISTA 2: Módulo 3 (Perfil Individual)
+             ============================================== -->
+        <div id="view-profile" class="view-section hidden opacity-0 w-full min-h-screen pt-24 pb-20 px-6 transition-opacity duration-500 bg-white">
+            <div class="container mx-auto max-w-5xl">
+                <!-- Botón de regreso -->
+                <button class="mb-8 flex items-center gap-2 text-slate-500 hover:text-sky-600 font-medium transition-colors" onclick="showView('home')">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al directorio
+                </button>
+
+                <div class="grid md:grid-cols-12 gap-10">
+                    <!-- Columna Izquierda: Foto y Acciones -->
+                    <div class="md:col-span-4 flex flex-col items-center text-center">
+                        <div class="w-48 h-48 rounded-[2rem] overflow-hidden shadow-2xl mb-6 relative group">
+                            <img id="profile-img" src="" alt="Perfil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        </div>
+                        <h2 id="profile-name" class="text-3xl font-extrabold text-slate-800 mb-2">Nombre</h2>
+                        <p id="profile-role" class="text-sky-600 font-medium mb-8">Firmante de Paz</p>
+
+                        <!-- Botón El Cuento -->
+                        <div class="w-full solid-card-yellow p-6 cursor-pointer hover:scale-105 transition-transform" onclick="showStory()">
+                            <div class="text-4xl text-slate-800 mb-4 animate-bounce"><i class="fa-solid fa-book-open-reader"></i></div>
+                            <h3 class="font-bold text-slate-800 text-lg mb-2">Experiencia Interactiva</h3>
+                            <p class="text-sm text-slate-700">Transforma su historia en un cuento animado con narración.</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Contenido Multimedia y Texto -->
+                    <div class="md:col-span-8 space-y-8">
+                        <div class="solid-card-blue p-8">
+                            <h3 class="text-2xl font-bold text-white mb-6 border-b border-white/20 pb-4"><i class="fa-solid fa-video mr-2"></i> Entrevista Principal</h3>
+
+                            <!-- Contenedor Video -->
+                            <div class="aspect-video bg-black/50 rounded-2xl overflow-hidden shadow-inner mb-6 relative">
+                                <video id="profile-video" class="w-full h-full object-cover" controls>
+                                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                                    Tu navegador no soporta el video.
+                                </video>
+                            </div>
+
+                            <!-- Contenedor Audio -->
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 flex flex-col gap-2">
+                                <span class="text-sm font-medium text-sky-100"><i class="fa-solid fa-headphones"></i> Escuchar Podcast Completo</span>
+                                <audio id="profile-audio" class="w-full h-10" controls>
+                                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                                    Tu navegador no soporta el elemento de audio.
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Historia Periodística -->
+                        <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4 text-gradient-blue">Su Historia</h3>
+                            <div id="profile-story" class="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
+                                <!-- Texto generado dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================
+             VISTA 3: Módulo 4 (Experiencia El Cuento)
+             ============================================== -->
+        <div id="view-story" class="view-section hidden opacity-0 fixed inset-0 z-[60] bg-slate-900 flex flex-col transition-opacity duration-500">
+            <!-- Header del Cuento -->
+            <div class="p-4 flex justify-between items-center bg-slate-900 text-white shadow-md z-10">
+                <button class="flex items-center gap-2 hover:text-sky-400 transition-colors" onclick="closeStory()">
+                    <i class="fa-solid fa-xmark text-xl"></i> Salir del cuento
+                </button>
+                <div class="font-bold text-xl tracking-widest uppercase text-gradient-yellow" id="story-title">El Cuento</div>
+                <div class="flex items-center gap-4">
+                    <button id="tts-toggle" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-600 transition-colors" title="Activar/Desactivar Lectura" onclick="toggleTTS()">
+                        <i class="fa-solid fa-volume-high" id="tts-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenedor del Libro -->
+            <div class="flex-grow relative flex items-center justify-center overflow-hidden p-4 sm:p-10" style="background-image: radial-gradient(circle, #334155, #0f172a);">
+
+                <!-- Book Container (StPageFlip) -->
+                <div id="book-container" class="relative shadow-2xl transition-transform duration-500">
+                    <!-- Pages will be injected by JS -->
+                </div>
+
+                <!-- Controles de Navegación del Libro -->
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10 text-white text-2xl flex items-center justify-center transition-all z-20 shadow-xl" id="btn-prev-page">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10 text-white text-2xl flex items-center justify-center transition-all z-20 shadow-xl" id="btn-next-page">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <div class="p-4 bg-slate-900 text-center text-slate-400 text-sm">
+                Navega con los botones "-" y "+" o arrastrando las páginas desde las esquinas.
+            </div>
+        </div>
+
+    </main>
+
+    <!-- PageFlip Library -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+    <script src="podcast.js"></script>
+</body>
+</html>
