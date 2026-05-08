@@ -13,10 +13,10 @@ const firmantes = [
             <p>La comunidad, que al principio sentía recelo, ahora trabaja hombro a hombro con él, demostrando que la reconciliación es un proceso diario y tangible.</p>
         `,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1505934333218-8fe219d08316?q=80&w=800", text: "Había una vez, en unas montañas lejanas, un joven llamado Carlos que caminaba por senderos oscuros." },
-            { img: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=800", text: "Tras muchos años de tormenta, decidió dejar atrás el estruendo y buscar la calma." },
-            { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800", text: "Sus manos, antes marcadas por la rudeza, encontraron unas pequeñas semillas mágicas: granos de café." },
-            { img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", text: "Y así, con paciencia y amor, el café floreció, uniendo a todo el pueblo en un abrazo con aroma a esperanza. Fin." }
+            { img: "https://images.unsplash.com/photo-1505934333218-8fe219d08316?q=80&w=800", text: "Había una vez, en un rincón escondido entre montañas verdes y nubes juguetonas, un joven soñador llamado Carlos. Desde pequeño, había caminado por senderos difíciles y oscuros, buscando su lugar en el mundo." },
+            { img: "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=800", text: "Tras muchos años de tormentas y días grises, Carlos sintió en su corazón que era el momento de dejar atrás el ruido y el estruendo. Anhelaba la calma de la naturaleza y el canto de los pájaros al amanecer." },
+            { img: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800", text: "Sus manos, que antes estaban marcadas por la rudeza de un camino empinado, se abrieron para recibir un regalo de la tierra: unas pequeñas semillas mágicas que parecían esconder un gran secreto. ¡Eran granos de café!" },
+            { img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", text: "Con infinita paciencia, amor y dedicación, Carlos cuidó esas semillas. Poco a poco, el café floreció y su delicioso aroma se esparció por el valle, uniendo a todo el pueblo en un cálido abrazo lleno de esperanza y sonrisas." }
         ]
     },
     {
@@ -31,9 +31,9 @@ const firmantes = [
             <p>Su proyecto textil no solo ha sido un éxito económico, sino un poderoso espacio terapéutico.</p>
         `,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1605814046045-8b17b6a67fbd?q=80&w=800", text: "Marta conocía los nudos de la tristeza desde muy joven." },
-            { img: "https://images.unsplash.com/photo-1581452902640-1e5f8ceb4d58?q=80&w=800", text: "Un día, decidió desatar esos nudos y comprar hilos de colores brillantes." },
-            { img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800", text: "Junto a otras mujeres, tejió una gran manta que cubrió las cicatrices de todo el valle." }
+            { img: "https://images.unsplash.com/photo-1605814046045-8b17b6a67fbd?q=80&w=800", text: "En un valle donde el viento soplaba suavemente, vivía Marta. Desde que era una niña, Marta había conocido los nudos de la tristeza y los hilos enredados de una vida llena de desafíos." },
+            { img: "https://images.unsplash.com/photo-1581452902640-1e5f8ceb4d58?q=80&w=800", text: "Un hermoso día iluminado por el sol, Marta tomó una valiente decisión: desatar esos nudos uno por uno. Con una sonrisa, fue a buscar hilos de todos los colores brillantes del arcoíris." },
+            { img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800", text: "Marta no estaba sola. Junto a otras mujeres valientes, comenzó a tejer. Puntada a puntada, crearon una manta inmensa y hermosa que cubrió de alegría, color y paz todas las cicatrices del valle." }
         ]
     },
     {
@@ -45,8 +45,9 @@ const firmantes = [
         audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         historiaHtml: `<p>Luis se dedica a enseñar lectura y escritura a niños en zonas rurales aisladas.</p>`,
         cuento: [
-            { img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", text: "Luis llevaba consigo un cuaderno viejo lleno de sueños." },
-            { img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800", text: "Descubrió que las letras eran herramientas más poderosas que cualquier otra." }
+            { img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800", text: "En un pueblito donde las estrellas brillaban más que en ningún otro lado, vivía Luis. A donde quiera que iba, Luis llevaba consigo un cuaderno viejo y gastado, pero que estaba lleno de grandes sueños y hermosos pensamientos." },
+            { img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800", text: "Pronto, Luis hizo un gran descubrimiento: se dio cuenta de que las letras y las palabras eran herramientas mágicas, mucho más poderosas que cualquier otra cosa que hubiera conocido en su vida." },
+            { img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800", text: "Con gran entusiasmo, reunió a los niños del pueblito y comenzó a enseñarles a leer y a escribir. Las palabras se convirtieron en alas, y juntos volaron hacia un futuro lleno de imaginación y esperanza." }
         ]
     }
 ];
@@ -55,6 +56,14 @@ let currentProfile = null;
 let pageFlip = null;
 let synth = window.speechSynthesis;
 let isTTSActive = false;
+const flipSound = new Audio('https://cdn.freesound.org/previews/415/415209_5121236-lq.mp3');
+
+// Helper para envolver palabras
+function wrapWordsWithSpans(text) {
+    return text.split(' ').map((word, index) => {
+        return `<span class="word-span" data-word-index="${index}">${word}</span>`;
+    }).join(' ');
+}
 
 // Inicialización de la Galería
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,6 +150,9 @@ function showStory() {
                 <div class="page-text">
                     <h2 class="text-3xl font-bold mb-4 text-gradient-yellow">El Cuento de</h2>
                     <h1 class="text-5xl font-extrabold">${currentProfile.nombre}</h1>
+                    <button class="mt-8 btn-premium btn-blue text-lg shadow-xl shadow-sky-500/50 hover:scale-110" onclick="startReadingStory(event)">
+                        <i class="fa-solid fa-play mr-2"></i> Reproducir
+                    </button>
                 </div>
             </div>
         </div>
@@ -149,11 +161,12 @@ function showStory() {
 
     // Páginas dinámicas
     currentProfile.cuento.forEach((p, index) => {
+        const wrappedText = wrapWordsWithSpans(p.text);
         container.innerHTML += `
             <div class="page">
                 <div class="page-content">
                     <img src="${p.img}" class="page-image" alt="Ilustración">
-                    <div class="page-text">${p.text}</div>
+                    <div class="page-text dynamic-story-text" data-story-index="${index}">${wrappedText}</div>
                 </div>
                 <div class="page-number">${index + 1}</div>
             </div>
@@ -197,6 +210,16 @@ function showStory() {
 
     // Evento de cambio de página para TTS
     pageFlip.on('flip', (e) => {
+        // Reproducir sonido de cambio de página
+        flipSound.currentTime = 0;
+        flipSound.play().catch(e => console.log('Audio autoplay prevented'));
+
+        // Transición colorida de página
+        document.getElementById('view-story').classList.add('page-transition-flash');
+        setTimeout(() => {
+            document.getElementById('view-story').classList.remove('page-transition-flash');
+        }, 500);
+
         if(isTTSActive) {
             readCurrentPages(e.data);
         }
@@ -236,37 +259,93 @@ function toggleTTS() {
     }
 }
 
+// Inicia la lectura desde la portada
+function startReadingStory(e) {
+    e.stopPropagation();
+    if (!isTTSActive) {
+        toggleTTS(); // Activa el audio
+    }
+    if (pageFlip) {
+        pageFlip.flipNext(); // Pasa a la primera página de contenido
+    }
+}
+
 function readCurrentPages(pageIndex) {
     stopTTS();
     if(!currentProfile || !currentProfile.cuento) return;
 
-    // Dependiendo de si es portada (0) o interior, calculamos el texto
-    let textToRead = "";
+    // Limpiar clases de resaltado anterior
+    document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
+
+    // En modo libro se ven dos páginas. Determinamos qué índices de cuento corresponden.
+    // Índice de página del cuento = (pageIndex - 2)
+    const leftStoryIndex = pageIndex - 2;
+    const rightStoryIndex = pageIndex - 1;
+
+    let phrases = [];
 
     if(pageIndex === 0) {
-        textToRead = "El cuento de " + currentProfile.nombre;
+        phrases.push({text: "El cuento de " + currentProfile.nombre, elInfo: null});
     } else {
-        // En modo libro se ven dos páginas. Determinamos qué índices de cuento corresponden.
-        // Índice de página del cuento = (pageIndex - 2)
-        const leftStoryIndex = pageIndex - 2;
-        const rightStoryIndex = pageIndex - 1;
-
         if (leftStoryIndex >= 0 && leftStoryIndex < currentProfile.cuento.length) {
-            textToRead += currentProfile.cuento[leftStoryIndex].text + ". ";
+            phrases.push({text: currentProfile.cuento[leftStoryIndex].text, index: leftStoryIndex});
         }
         if (rightStoryIndex >= 0 && rightStoryIndex < currentProfile.cuento.length) {
-            textToRead += currentProfile.cuento[rightStoryIndex].text;
+            phrases.push({text: currentProfile.cuento[rightStoryIndex].text, index: rightStoryIndex});
         }
 
         if(pageIndex >= currentProfile.cuento.length + 2) {
-             textToRead = "Fin.";
+             phrases.push({text: "Fin.", index: -1});
         }
     }
 
-    if(textToRead.trim() !== "") {
-        const utterance = new SpeechSynthesisUtterance(textToRead);
+    if(phrases.length > 0) {
+        const fullText = phrases.map(p => p.text).join(' . '); // Join with dot to add pause
+        const utterance = new SpeechSynthesisUtterance(fullText);
         utterance.lang = 'es-ES'; // O 'es-CO'
         utterance.rate = 0.9; // Velocidad un poco más lenta para cuento
+
+        let wordCount = 0;
+
+        utterance.onboundary = (event) => {
+            if (event.name === 'word') {
+                // Remover clases anteriores
+                document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
+
+                // Encontrar el span correspondiente.
+                // Dado que concatenamos textos, necesitamos un selector más general para buscar el n-ésimo span.
+                // Buscamos los spans en las páginas actualmente visibles
+                const visibleSpans = [];
+                if (leftStoryIndex >= 0) {
+                    const leftContainer = document.querySelector(`.dynamic-story-text[data-story-index="${leftStoryIndex}"]`);
+                    if(leftContainer) visibleSpans.push(...leftContainer.querySelectorAll('.word-span'));
+                }
+                if (rightStoryIndex >= 0) {
+                    const rightContainer = document.querySelector(`.dynamic-story-text[data-story-index="${rightStoryIndex}"]`);
+                    if(rightContainer) visibleSpans.push(...rightContainer.querySelectorAll('.word-span'));
+                }
+
+                // Aproximación simple: iluminar el span en el índice del conteo de palabras del evento.
+                // Como las APIs de SpeechSynthesis pueden separar palabras de distinta manera (por puntuación),
+                // esto es una aproximación visual.
+                // Determinamos el índice aproximado contando las palabras hasta event.charIndex
+                const textUpToBoundary = fullText.substring(0, event.charIndex);
+                const currentWordIndex = textUpToBoundary.split(/\s+/).filter(w => w.trim().length > 0).length;
+
+                if (visibleSpans[currentWordIndex]) {
+                    visibleSpans[currentWordIndex].classList.add('word-highlight');
+                } else if (visibleSpans[wordCount]) {
+                    // Fallback
+                    visibleSpans[wordCount].classList.add('word-highlight');
+                }
+                wordCount++;
+            }
+        };
+
+        utterance.onend = () => {
+             document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
+        }
+
         synth.speak(utterance);
     }
 }
