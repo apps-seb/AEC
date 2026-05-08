@@ -132,9 +132,9 @@
         <!-- ==============================================
              VISTA 3: Módulo 4 (Experiencia El Cuento)
              ============================================== -->
-        <div id="view-story" class="view-section hidden opacity-0 fixed inset-0 z-[60] bg-slate-900 flex flex-col transition-opacity duration-500">
+        <div id="view-story" class="view-section hidden opacity-0 fixed inset-0 z-[60] bg-slate-900 flex flex-col transition-opacity duration-500 overflow-y-auto min-h-screen pb-10">
             <!-- Header del Cuento -->
-            <div class="p-4 flex justify-between items-center bg-slate-900 text-white shadow-md z-10">
+            <div class="p-4 flex justify-between items-center bg-slate-900 text-white shadow-md z-10 sticky top-0">
                 <button class="flex items-center gap-2 hover:text-sky-400 transition-colors" onclick="closeStory()">
                     <i class="fa-solid fa-xmark text-xl"></i> Salir del cuento
                 </button>
@@ -149,24 +149,24 @@
             </div>
 
             <!-- Contenedor del Libro -->
-            <div class="flex-grow relative flex items-center justify-center overflow-hidden p-4 sm:p-10" style="background-image: radial-gradient(circle, #334155, #0f172a);">
+            <div class="flex-grow relative flex items-center justify-center overflow-hidden p-4 sm:p-10 min-h-[600px] mt-10 mb-10" style="background-image: radial-gradient(circle, #334155, #0f172a);">
 
                 <!-- Book Container (StPageFlip) -->
-                <div id="book-container" class="relative shadow-2xl transition-transform duration-500">
+                <div id="book-container" class="relative shadow-2xl transition-transform duration-500 mb-10">
                     <!-- Pages will be injected by JS -->
                 </div>
 
                 <!-- Controles de Navegación del Libro -->
                 <button class="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10 text-white text-2xl flex items-center justify-center transition-all z-20 shadow-xl" id="btn-prev-page">
-                    <i class="fa-solid fa-minus"></i>
+                    <i class="fa-solid fa-chevron-left"></i>
                 </button>
                 <button class="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur border border-white/10 text-white text-2xl flex items-center justify-center transition-all z-20 shadow-xl" id="btn-next-page">
-                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
 
             <div class="p-4 bg-slate-900 text-center text-slate-400 text-sm">
-                Navega con los botones "-" y "+" o arrastrando las páginas desde las esquinas.
+                Navega con las flechas o arrastrando las páginas desde las esquinas.
             </div>
         </div>
 
