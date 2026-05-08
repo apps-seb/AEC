@@ -66,7 +66,6 @@ const firmantes = [
 
 let currentProfile = null;
 let pageFlip = null;
-let synth = window.speechSynthesis;
 let isTTSActive = false;
 const flipSound = new Audio('https://cdn.freesound.org/previews/415/415209_5121236-lq.mp3');
 
@@ -118,7 +117,7 @@ function showView(viewId) {
 
     document.querySelectorAll('.view-section').forEach(sec => {
         sec.classList.remove('active');
-        setTimeout(() => sec.classList.add('hidden'), 500); // Fade out
+        setTimeout(() => sec.classList.add('hidden'), 500); 
     });
 
     const target = document.getElementById(`view-${viewId}`);
@@ -148,11 +147,11 @@ function loadProfile(id) {
 }
 
 // Inicializar y Mostrar Cuento
-function showStory() {
+window.showStory = function() {
     if(!currentProfile || !currentProfile.cuento) return;
     showView('story');
 
-    // MÁGIA AQUÍ: Esperamos a que la vista tenga dimensiones reales en el DOM antes de instanciar PageFlip
+    // Esperamos a que la vista tenga dimensiones reales en el DOM antes de instanciar PageFlip
     setTimeout(() => {
         initBook();
     }, 150);
@@ -161,7 +160,7 @@ function showStory() {
 function initBook() {
     const wrapper = document.getElementById('book-wrapper');
     
-    // Destrucción limpia absoluta
+    // Destrucción limpia absoluta para navegar entre cuentos sin errores
     if(pageFlip) {
         try { pageFlip.destroy(); } catch(e) {}
         pageFlip = null;
@@ -177,14 +176,17 @@ function initBook() {
     container.className = 'relative shadow-2xl transition-transform duration-500 mx-auto';
     wrapper.insertBefore(container, wrapper.firstChild);
 
-    // Portada
+    // Portada (Agregados eventos para evitar que PageFlip bloquee el clic)
     container.innerHTML += `
         <div class="page hard">
             <div class="page-content">
                 <div class="page-text text-center flex flex-col justify-center items-center h-full">
                     <h2 class="text-3xl font-bold mb-4 text-gradient-yellow">El Cuento de</h2>
                     <h1 class="text-5xl font-extrabold mb-8">${currentProfile.nombre}</h1>
-                    <button class="mt-8 btn-premium btn-blue text-lg shadow-xl shadow-sky-500/50 hover:scale-110 z-50" onclick="startReadingStory(event)">
+                    <button class="mt-8 btn-premium btn-blue text-lg shadow-xl shadow-sky-500/50 hover:scale-110 z-[100] relative cursor-pointer" 
+                        onpointerdown="event.stopPropagation();" 
+                        onmousedown="event.stopPropagation();" 
+                        onclick="startReadingStory(event)">
                         <i class="fa-solid fa-play mr-2"></i> Reproducir
                     </button>
                 </div>
@@ -240,24 +242,27 @@ function initBook() {
     // Evento de cambio de página
     pageFlip.on('flip', (e) => {
         flipSound.currentTime = 0;
-        flipSound.play().catch(e => console.log('Audio autoplay prevented'));
+        flipSound.play().catch(() => {});
 
         document.getElementById('view-story').classList.add('page-transition-flash');
         setTimeout(() => {
-            document.getElementById('view-story').classList.remove('page-transition-flash');
+            const viewS = document.getElementById('view-story');
+            if(viewS) viewS.classList.remove('page-transition-flash');
         }, 500);
 
         updatePageIndicator(e.data);
 
         if(isTTSActive) {
             // Un pequeño delay evita que la voz se corte por la carga del DOM
-            setTimeout(() => readCurrentPages(e.data), 300);
+            setTimeout(() => readCurrentPages(e.data), 150);
         }
     });
 
-    // Botones navegación del libro
-    document.getElementById('btn-prev-page').onclick = () => pageFlip.flipPrev();
-    document.getElementById('btn-next-page').onclick = () => pageFlip.flipNext();
+    // Botones navegación del libro 1 a 1 (- / +)
+    const btnPrev = document.getElementById('btn-prev-page');
+    const btnNext = document.getElementById('btn-next-page');
+    if(btnPrev) btnPrev.onclick = () => pageFlip.flipPrev();
+    if(btnNext) btnNext.onclick = () => pageFlip.flipNext();
 
     // Reset TTS state
     isTTSActive = false;
@@ -271,19 +276,19 @@ function initBook() {
 function updatePageIndicator(currentIndex) {
     if(!pageFlip) return;
     const total = pageFlip.getPageCount();
-    // Ajustamos la lógica visual: la portada es 0, las páginas internas son reales, contraportada es el fin.
     let displayPage = currentIndex;
     let displayTotal = total - 1; 
-    document.getElementById('page-indicator-text').textContent = `${displayPage} / ${displayTotal}`;
+    const ind = document.getElementById('page-indicator-text');
+    if(ind) ind.textContent = `${displayPage} / ${displayTotal}`;
 }
 
-function closeStory() {
+window.closeStory = function() {
     stopTTS();
     showView('profile');
 }
 
 // Lógica de Text-To-Speech (TTS)
-function toggleTTS() {
+window.toggleTTS = function() {
     const btn = document.getElementById('tts-toggle');
     const icon = document.getElementById('tts-icon');
 
@@ -292,7 +297,6 @@ function toggleTTS() {
     if(isTTSActive) {
         icon.className = 'fa-solid fa-volume-high';
         btn.classList.replace('bg-slate-800', 'bg-sky-600');
-        // Leer inmediatamente las páginas actuales
         if(pageFlip) readCurrentPages(pageFlip.getCurrentPageIndex());
     } else {
         icon.className = 'fa-solid fa-volume-xmark';
@@ -301,44 +305,53 @@ function toggleTTS() {
     }
 }
 
-// Inicia la lectura desde la portada
-function startReadingStory(e) {
-    if(e) e.stopPropagation();
+// Inicia la lectura desde la portada, blindado contra errores de interacción
+window.startReadingStory = function(e) {
+    if(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
 
-    // Configurar estado de TTS activo
     isTTSActive = true;
     const btn = document.getElementById('tts-toggle');
     const icon = document.getElementById('tts-icon');
-    icon.className = 'fa-solid fa-volume-high';
-    btn.classList.replace('bg-slate-800', 'bg-sky-600');
+    if(icon && btn) {
+        icon.className = 'fa-solid fa-volume-high';
+        btn.classList.replace('bg-slate-800', 'bg-sky-600');
+    }
+
+    // Truco: Desbloquear el motor de audio en navegadores estrictos mediante una locución vacía en el instante del clic
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const unlockUtterance = new SpeechSynthesisUtterance('');
+        unlockUtterance.volume = 0;
+        window.speechSynthesis.speak(unlockUtterance);
+    }
 
     if (pageFlip) {
-        // Detener cualquier lectura previa antes de iniciar
-        stopTTS();
-
         const currentPage = pageFlip.getCurrentPageIndex();
         if (currentPage !== 1) {
-            pageFlip.flip(1); // Al cambiar de página, el evento 'flip' llamará a readCurrentPages
+            // El evento 'flip' detectará el cambio y llamará a readCurrentPages
+            pageFlip.flip(1);
         } else {
-            readCurrentPages(1); // Si ya estamos en la página 1, leemos directamente
+            readCurrentPages(1);
         }
     }
 }
 
-function readCurrentPages(pageIndex) {
+window.readCurrentPages = function(pageIndex) {
     stopTTS();
     if(!currentProfile || !currentProfile.cuento) return;
 
     // Limpiar clases de resaltado anterior
     document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
 
-    // Dependiendo de la orientación de StPageFlip (portrait = 1 pág, landscape = 2 págs)
     const mode = pageFlip.getOrientation();
     const visiblePages = [];
 
     if (mode === 'portrait') {
         visiblePages.push(pageIndex);
-    } else { // landscape
+    } else { 
         visiblePages.push(pageIndex);
         if (pageIndex + 1 < pageFlip.getPageCount()) {
             visiblePages.push(pageIndex + 1);
@@ -360,19 +373,18 @@ function readCurrentPages(pageIndex) {
         }
     });
 
-    if(phrases.length > 0) {
-        // Envolvemos el speak en un pequeño timeout después del stopTTS para limpiar la caché de audio del navegador
+    if(phrases.length > 0 && 'speechSynthesis' in window) {
+        // Envolvemos el speak en un timeout limpio para vaciar la caché de audio previa
         setTimeout(() => {
-            const fullText = phrases.map(p => p.text).join(' ... '); // Join with dot to add pause
+            const fullText = phrases.map(p => p.text).join(' ... '); 
             const utterance = new SpeechSynthesisUtterance(fullText);
-            utterance.lang = 'es-ES'; // O 'es-CO'
-            utterance.rate = 0.9; // Velocidad un poco más lenta para cuento
+            utterance.lang = 'es-ES'; 
+            utterance.rate = 0.9; 
 
             let wordCount = 0;
 
             utterance.onboundary = (event) => {
                 if (event.name === 'word') {
-                    // Remover clases anteriores
                     document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
 
                     const visibleSpans = [];
@@ -385,14 +397,15 @@ function readCurrentPages(pageIndex) {
                         if(rightContainer) visibleSpans.push(...rightContainer.querySelectorAll('.word-span'));
                     }
 
-                    const textUpToBoundary = fullText.substring(0, event.charIndex);
-                    const currentWordIndex = textUpToBoundary.split(/\s+/).filter(w => w.trim().length > 0).length;
+                    if (visibleSpans.length > 0) {
+                        const textUpToBoundary = fullText.substring(0, event.charIndex);
+                        const currentWordIndex = textUpToBoundary.split(/\s+/).filter(w => w.trim().length > 0).length;
 
-                    if (visibleSpans[currentWordIndex]) {
-                        visibleSpans[currentWordIndex].classList.add('word-highlight');
-                    } else if (visibleSpans[wordCount]) {
-                        // Fallback
-                        visibleSpans[wordCount].classList.add('word-highlight');
+                        if (visibleSpans[currentWordIndex]) {
+                            visibleSpans[currentWordIndex].classList.add('word-highlight');
+                        } else if (visibleSpans[wordCount]) {
+                            visibleSpans[wordCount].classList.add('word-highlight');
+                        }
                     }
                     wordCount++;
                 }
@@ -402,13 +415,13 @@ function readCurrentPages(pageIndex) {
                  document.querySelectorAll('.word-highlight').forEach(el => el.classList.remove('word-highlight'));
             }
 
-            synth.speak(utterance);
+            window.speechSynthesis.speak(utterance);
         }, 100);
     }
 }
 
 function stopTTS() {
-    if(synth && synth.speaking) {
-        synth.cancel();
+    if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
     }
 }
