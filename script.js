@@ -173,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     name: "La Otra Cara de la Moneda",
                     type: "Podcast",
                     desc: "Un espacio de diálogo y reflexión comunitaria sobre nuestras realidades.",
-                    img: "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?q=80&w=600&auto=format&fit=crop"
+                    img: "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?q=80&w=600&auto=format&fit=crop",
+                    link: "https://asoenlacecomunitario.com/podcast.html"
                 },
                 {
                     name: "Vivienda Digna",
@@ -268,8 +269,13 @@ document.addEventListener('DOMContentLoaded', () => {
         subProjectsContainer.innerHTML = '';
         data.projects.forEach((proj, index) => {
             const delay = index * 100;
-            const card = document.createElement('div');
-            card.className = `flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transform translate-y-4 opacity-0 transition-all duration-500`;
+            const card = proj.link ? document.createElement('a') : document.createElement('div');
+            if (proj.link) {
+                card.href = proj.link;
+                card.className = `flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transform translate-y-4 opacity-0 transition-all duration-500 hover:bg-slate-50 cursor-pointer block text-left`;
+            } else {
+                card.className = `flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-100 shadow-sm transform translate-y-4 opacity-0 transition-all duration-500`;
+            }
             card.style.transitionDelay = `${delay}ms`;
 
             card.innerHTML = `
